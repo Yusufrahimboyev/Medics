@@ -36,5 +36,7 @@ GlobalKey<NavigatorState> navigationKey = GlobalKey<NavigatorState>();
 GoRouter goRouter = GoRouter(
   navigatorKey: navigationKey,
   initialLocation: AppRouter.onboarding,
-  routes: [],
+  routes: [
+
+  ],
 );
