@@ -29,7 +29,7 @@ class AppRouter {
 
   //Abdumannon
   static const String profile = "/profile";
-  static const String logout = "/logout";
+
 }
 
 GlobalKey<NavigatorState> navigationKey = GlobalKey<NavigatorState>();
