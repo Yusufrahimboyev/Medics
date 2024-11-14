@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      routerConfig: goRouter,
+      routerConfig: router,
       debugShowCheckedModeBanner: false,
       locale: Locale(context.dependencies.locale),
       localizationsDelegates: const [

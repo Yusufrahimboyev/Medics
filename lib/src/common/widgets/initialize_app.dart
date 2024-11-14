@@ -15,14 +15,16 @@ class InitializeApp {
     bool theme = shp.getBool(Constants.theme) ?? false;
     String locale = shp.getString(Constants.locale) ?? "en";
 
-    final dio = Dio(
-      BaseOptions(
-        baseUrl: Constants.baseUrl,
-        connectTimeout: const Duration(seconds: 30),
-        receiveTimeout: const Duration(seconds: 30),
+    final dio = Dio(BaseOptions(
+      baseUrl: Constants.baseUrl,
+      connectTimeout: const Duration(seconds: 30),
+      receiveTimeout: const Duration(seconds: 30),
+    ));
 
-      )
+    return AppDependency(
+      sharedPreferences: shp,
+      locale: locale,
+      theme: theme,
     );
-    return AppDependency(sharedPreferences: shp, locale: locale, theme: theme);
   }
 }
