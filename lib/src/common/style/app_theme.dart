@@ -18,21 +18,21 @@ const ColorScheme lightColorScheme = ColorScheme(
   brightness: Brightness.light,
   primary: Color(0xff000000),
   onPrimary: Color(0xffffffff),
-  primaryContainer: Color(0xffbbede6),
-  onPrimaryContainer: Color(0xff000000),
-  primaryFixed: Color(0xffbfe7e4),
-  primaryFixedDim: Color(0xff8cd2cb),
-  onPrimaryFixed: Color(0xff000605),
-  onPrimaryFixedVariant: Color(0xff001815),
-  secondary: Color(0xff4a635f),
-  onSecondary: Color(0xffffffff),
+  primaryContainer: Color(0xffF5F7FF),
+  onPrimaryContainer: Color(0xff199A8E),//main_color
+  primaryFixed: Color(0xffF9FAFB),//textform_field
+  primaryFixedDim: Color(0xffFF5C5C),//error_Color
+  onPrimaryFixed: Color(0xffE5E7EB),//border_color
+  onPrimaryFixedVariant: Color(0xffA1A8B0),//text_color
+  secondary: Color(0xffA1A8B0),//container_Color
+  onSecondary: Color(0xffADADAD),//search_color
   secondaryContainer: Color(0xffcce8e2),
   onSecondaryContainer: Color(0xff000000),
   secondaryFixed: Color(0xffd6dedd),
   secondaryFixedDim: Color(0xffb2c0be),
   onSecondaryFixed: Color(0xff171e1d),
   onSecondaryFixedVariant: Color(0xff1e2827),
-  tertiary: Color(0xff48617a),
+  tertiary: Color(0xffE8F3F1),//card_color
   onTertiary: Color(0xffffffff),
   tertiaryContainer: Color(0xffcfe5ff),
   onTertiaryContainer: Color(0xff000000),
