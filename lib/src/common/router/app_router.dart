@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medics/src/features/home/screen/homescreen.dart';
+
+
+import '../../features/home/home_screen.dart';
 
 class AppRouter {
   const AppRouter._();
@@ -33,30 +35,32 @@ class AppRouter {
 }
 
 GlobalKey<NavigatorState> navigationKey = GlobalKey<NavigatorState>();
-GoRouter goRouter = GoRouter(
+
+GoRouter router = GoRouter(
   navigatorKey: navigationKey,
   initialLocation: AppRouter.home,
   routes: [
     GoRoute(
-      path: AppRouter.onboarding,
-      name: AppRouter.onboarding,
-      pageBuilder: (context, state) =>
-          CustomTransitionPage(
-            child:Homescreen(),
-            transitionsBuilder: (BuildContext context, animation,
-                secondaryAnimation, child) {
-              const begin = Offset(0.5, 0.0);
-              const end = Offset.zero;
-              final tween = Tween(begin: begin, end: end);
-              final offsetAnimation = animation.drive(tween);
-              return SlideTransition(
-                position: offsetAnimation,
-                child: FadeTransition(
-                  opacity: animation,
-                  child: child,
-                ),
-              );
-            },),
+      path: AppRouter.home,
+      name: AppRouter.home,
+      pageBuilder: (context, state) => CustomTransitionPage(
+        key: state.pageKey,
+        child: const HomeScreen(), // Your screen
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(0.5, 0.0);
+          const end = Offset.zero;
+          final tween = Tween(begin: begin, end: end);
+          final offsetAnimation = animation.drive(tween);
+          return SlideTransition(
+            position: offsetAnimation,
+            child: FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+          );
+        },
+      ),
     ),
   ],
 );
+
