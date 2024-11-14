@@ -2,14 +2,21 @@ import 'package:flutter/material.dart';
 
 class AppTheme{
   const AppTheme._();
-  static ThemeData light=ThemeData();
-  static ThemeData dark=ThemeData();
+  static ThemeData light=ThemeData(
+    useMaterial3: true,
+    colorScheme: lightColorScheme,
+    fontFamily: "Inter"
+  );
+  static ThemeData dark=ThemeData(
+    useMaterial3: true,
+    colorScheme: lightColorScheme,
+  );
 }
 /// Light [ColorScheme] made with FlexColorScheme v8.0.0.
 
 const ColorScheme lightColorScheme = ColorScheme(
   brightness: Brightness.light,
-  primary: Color(0xff006a60),
+  primary: Color(0xff000000),
   onPrimary: Color(0xffffffff),
   primaryContainer: Color(0xffbbede6),
   onPrimaryContainer: Color(0xff000000),
@@ -61,7 +68,7 @@ const ColorScheme lightColorScheme = ColorScheme(
 /// Requires Flutter 3.22.0 or later.
 const ColorScheme darkColorScheme = ColorScheme(
   brightness: Brightness.dark,
-  primary: Color(0xff53dbca),
+  primary: Color(0xffffffff),
   onPrimary: Color(0xff000000),
   primaryContainer: Color(0xff005048),
   onPrimaryContainer: Color(0xffffffff),
