@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:medics/src/features/home/top_doctor_screen/screen/top_doctor_screen.dart';
 
-
-import '../../features/home/home_screen.dart';
+import '../../features/home/home_screen/screen/home_screen.dart';
 
 class AppRouter {
   const AppRouter._();
@@ -61,6 +61,25 @@ GoRouter router = GoRouter(
         },
       ),
     ),
+    GoRoute(
+      path: AppRouter.topDoctor,
+      name: AppRouter.topDoctor,
+      pageBuilder: (context, state) => CustomTransitionPage(
+        child: const TopDoctorScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(0.5, 0.0);
+          const end = Offset.zero;
+          final tween = Tween(begin: begin, end: end);
+          final offsetAnimation = animation.drive(tween);
+          return SlideTransition(
+            position: offsetAnimation,
+            child: FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+          );
+        },
+      ),
+    ),
   ],
 );
-

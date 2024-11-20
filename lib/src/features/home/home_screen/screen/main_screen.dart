@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:medics/src/common/style/app_icons.dart';
-
+import 'package:flutter_svg/svg.dart';
 import 'package:medics/src/common/utils/context_extension.dart';
+import 'package:medics/src/features/home/home_screen/screen/widgets/home_main_card.dart';
+import 'package:medics/src/features/home/home_screen/screen/widgets/top_doctor_list.dart';
 
-import 'package:medics/src/features/home/screen/home_main_card.dart';
+import '../../../../common/style/app_icons.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: context.colors.onPrimary,
       body: SafeArea(
         child: ListView(
+
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -41,8 +41,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         const Spacer(),
                         SvgPicture.asset(
                           AppIcons.notification,
-                          width: 24,
-                          height: 24,
+                          width: 28,
+                          height: 28,
                           colorFilter: ColorFilter.mode(
                               context.colors.primary, BlendMode.srcATop),
                         ),
@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                        padding: const EdgeInsets.symmetric(horizontal: 12,),
                         child: TextFormField(
                           textAlign: TextAlign.start,
                           decoration: InputDecoration(
@@ -97,20 +97,25 @@ class _HomeScreenState extends State<HomeScreen> {
                           DecoratedBox(
                             decoration: BoxDecoration(
                               shape: BoxShape.rectangle,
-                              color: context.colors.primary,
+                              color: context.colors.onPrimary,
                               borderRadius: const BorderRadius.all(
-                                Radius.circular(20),
+                                Radius.circular(12),
                               ),
                               boxShadow: [
                                 BoxShadow(
                                   color: context.colors.onSecondary
-                                      .withOpacity(0.1),
+                                      .withOpacity(0.4),
                                   offset: const Offset(12, 12),
                                   blurRadius: 30,
                                 ),
                               ],
                             ),
-                            child: const SizedBox(height: 70, width: 70),
+                            child: SizedBox(height: 54, width: 54,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: SvgPicture.asset(AppIcons.doctor,),
+                              ),
+                            ),
                           ),
                           Text(
                             context.lang.Doctor,
@@ -125,23 +130,28 @@ class _HomeScreenState extends State<HomeScreen> {
                           DecoratedBox(
                             decoration: BoxDecoration(
                               shape: BoxShape.rectangle,
-                              color: context.colors.primary,
+                              color: context.colors.onPrimary,
                               borderRadius: const BorderRadius.all(
-                                Radius.circular(20),
+                                Radius.circular(12),
                               ),
                               boxShadow: [
                                 BoxShadow(
                                   color: context.colors.onSecondary
-                                      .withOpacity(0.1),
+                                      .withOpacity(0.4),
                                   offset: const Offset(12, 12),
                                   blurRadius: 30,
                                 ),
                               ],
                             ),
-                            child: const SizedBox(height: 70, width: 70),
+                            child: SizedBox(height: 54, width: 54,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: SvgPicture.asset(AppIcons.pill,),
+                              ),
+                            ),
                           ),
                           Text(
-                            context.lang.pharmacy,
+                            context.lang.Doctor,
                             style: context.textTheme.bodyLarge?.copyWith(
                                 color: context.colors.onPrimaryFixedVariant,
                                 fontWeight: FontWeight.w400),
@@ -153,23 +163,28 @@ class _HomeScreenState extends State<HomeScreen> {
                           DecoratedBox(
                             decoration: BoxDecoration(
                               shape: BoxShape.rectangle,
-                              color: context.colors.primary,
+                              color: context.colors.onPrimary,
                               borderRadius: const BorderRadius.all(
-                                Radius.circular(20),
+                                Radius.circular(12),
                               ),
                               boxShadow: [
                                 BoxShadow(
                                   color: context.colors.onSecondary
-                                      .withOpacity(0.1),
+                                      .withOpacity(0.4),
                                   offset: const Offset(12, 12),
                                   blurRadius: 30,
                                 ),
                               ],
                             ),
-                            child: const SizedBox(height: 70, width: 70),
+                            child: SizedBox(height: 54, width: 54,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: SvgPicture.asset(AppIcons.hospital,),
+                              ),
+                            ),
                           ),
                           Text(
-                            context.lang.Hospital,
+                            context.lang.Doctor,
                             style: context.textTheme.bodyLarge?.copyWith(
                                 color: context.colors.onPrimaryFixedVariant,
                                 fontWeight: FontWeight.w400),
@@ -181,35 +196,44 @@ class _HomeScreenState extends State<HomeScreen> {
                           DecoratedBox(
                             decoration: BoxDecoration(
                               shape: BoxShape.rectangle,
-                              color: context.colors.primary,
+                              color: context.colors.onPrimary,
                               borderRadius: const BorderRadius.all(
-                                Radius.circular(20),
+                                Radius.circular(12),
                               ),
                               boxShadow: [
                                 BoxShadow(
                                   color: context.colors.onSecondary
-                                      .withOpacity(0.1),
+                                      .withOpacity(0.4),
                                   offset: const Offset(12, 12),
                                   blurRadius: 30,
                                 ),
                               ],
                             ),
-                            child: const SizedBox(height: 70, width: 70),
+                            child: SizedBox(height: 54, width: 54,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: SvgPicture.asset(AppIcons.ambulance,),
+                              ),
+                            ),
                           ),
                           Text(
-                            context.lang.Ambulance,
+                            context.lang.Doctor,
                             style: context.textTheme.bodyLarge?.copyWith(
                                 color: context.colors.onPrimaryFixedVariant,
                                 fontWeight: FontWeight.w400),
                           ),
                         ],
                       ),
+
+
                     ],
                   ),
                 ],
               ),
             ),
-           HomeMainCard(),
+            const HomeMainCard(),
+            const TopDoctorList(),
+
           ],
         ),
       ),

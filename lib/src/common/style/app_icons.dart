@@ -29,7 +29,8 @@ class AppIcons {
   static const String virus = "assets/icons/virus.svg";
   static const String heart = "assets/icons/heart.svg";
   static const String heartImpUls = "assets/icons/heartimpuls.svg";
-  static const String home = "assets/icons/home.svg";
+  static const String home1 = "assets/icons/home1.svg";
+  static const String home2 = "assets/icons/home2.svg";
   static const String hospital = "assets/icons/hospital.svg";
   static const String weight = "assets/icons/ibs.svg";
   static const String location = "assets/icons/location.svg";
@@ -40,7 +41,8 @@ class AppIcons {
   static const String paperclip = "assets/icons/paperclip.svg";
   static const String pill = "assets/icons/pill.svg";
   static const String plus = "assets/icons/plus.svg";
-  static const String profile = "assets/icons/profile.svg";
+  static const String profile1 = "assets/icons/profile1.svg";
+  static const String profile2 = "assets/icons/profile2.svg";
   static const String search = "assets/icons/search.svg";
   static const String shprist = "assets/icons/shprist.svg";
   static const String sms = "assets/icons/sms.svg";

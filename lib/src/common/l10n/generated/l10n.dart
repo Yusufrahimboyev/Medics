@@ -460,6 +460,16 @@ class S {
     );
   }
 
+  /// `Learn more`
+  String get learn {
+    return Intl.message(
+      'Learn more',
+      name: 'learn',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Chardiologist`
   String get Chardiologist {
     return Intl.message(

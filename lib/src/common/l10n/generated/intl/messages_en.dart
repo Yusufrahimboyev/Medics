@@ -138,6 +138,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Find a lot of specialist doctors in one place"),
         "go_home": MessageLookupByLibrary.simpleMessage("Go to home"),
         "group": MessageLookupByLibrary.simpleMessage("Group"),
+        "learn": MessageLookupByLibrary.simpleMessage("Learn more"),
         "login_enjoy": MessageLookupByLibrary.simpleMessage(
             "Login to enjoy the features we’ve provided, and stay healthy!"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
