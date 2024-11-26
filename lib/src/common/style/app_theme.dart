@@ -26,7 +26,7 @@ const ColorScheme lightColorScheme = ColorScheme(
   onPrimaryFixedVariant: Color(0xffA1A8B0),//text_color
   secondary: Color(0xffA1A8B0),//container_Color
   onSecondary: Color(0xffADADAD),//search_color
-  secondaryContainer: Color(0xffcce8e2),
+  secondaryContainer: Color(0xff717784),//about_color
   onSecondaryContainer: Color(0xff000000),
   secondaryFixed: Color(0xffd6dedd),
   secondaryFixedDim: Color(0xffb2c0be),
@@ -36,9 +36,9 @@ const ColorScheme lightColorScheme = ColorScheme(
   onTertiary: Color(0xffffffff),
   tertiaryContainer: Color(0xffcfe5ff),
   onTertiaryContainer: Color(0xff000000),
-  tertiaryFixed: Color(0xffd4dce4),
+  tertiaryFixed: Color(0xff555555),//time_color
   tertiaryFixedDim: Color(0xffb0bdc9),
-  onTertiaryFixed: Color(0xff19222a),
+  onTertiaryFixed: Color(0xff7BEB78),//circle_color
   onTertiaryFixedVariant: Color(0xff202a36),
   error: Color(0xffba1a1a),
   onError: Color(0xffffffff),
@@ -90,7 +90,7 @@ const ColorScheme darkColorScheme = ColorScheme(
   onTertiaryContainer: Color(0xffffffff),
   tertiaryFixed: Color(0xffd4dce4),
   tertiaryFixedDim: Color(0xffb0bdc9),
-  onTertiaryFixed: Color(0xff19222a),
+  onTertiaryFixed: Color(0xff7BEB78),
   onTertiaryFixedVariant: Color(0xff202a36),
   error: Color(0xffffb4ab),
   onError: Color(0xff000000),

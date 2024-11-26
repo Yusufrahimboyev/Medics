@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:medics/src/features/doctor_consultation/booking_screen/screen/booking_doctor_screen.dart';
+import 'package:medics/src/features/doctor_consultation/doctor_detail_screen/screen/doctor_detail_screen.dart';
+import 'package:medics/src/features/doctor_consultation/find_doctor_screen/screen/find_doctor_screen.dart';
+import 'package:medics/src/features/doctor_consultation/schedule_screen/screen/schedule_screen.dart';
+import 'package:medics/src/features/home/home_screen/screen/main_screen.dart';
 import 'package:medics/src/features/home/top_doctor_screen/screen/top_doctor_screen.dart';
+import 'package:medics/src/features/online_pharmacy/articles/screen/articles_screen.dart';
+import 'package:medics/src/features/profil/screen/profile_screen.dart';
 
 import '../../features/home/home_screen/screen/home_screen.dart';
 
@@ -17,6 +24,7 @@ class AppRouter {
 
   //Yusuf
   static const String home = "/home";
+  static const String main = "/main";
   static const String search = "/search";
   static const String topDoctor = "/topDoctor";
   static const String findDoctor = "/findDoctor";
@@ -38,29 +46,9 @@ GlobalKey<NavigatorState> navigationKey = GlobalKey<NavigatorState>();
 
 GoRouter router = GoRouter(
   navigatorKey: navigationKey,
-  initialLocation: AppRouter.home,
+  initialLocation: AppRouter.main,
   routes: [
-    GoRoute(
-      path: AppRouter.home,
-      name: AppRouter.home,
-      pageBuilder: (context, state) => CustomTransitionPage(
-        key: state.pageKey,
-        child: const HomeScreen(), // Your screen
-        transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(0.5, 0.0);
-          const end = Offset.zero;
-          final tween = Tween(begin: begin, end: end);
-          final offsetAnimation = animation.drive(tween);
-          return SlideTransition(
-            position: offsetAnimation,
-            child: FadeTransition(
-              opacity: animation,
-              child: child,
-            ),
-          );
-        },
-      ),
-    ),
+
     GoRoute(
       path: AppRouter.topDoctor,
       name: AppRouter.topDoctor,
@@ -80,6 +68,156 @@ GoRouter router = GoRouter(
           );
         },
       ),
+    ),
+    GoRoute(
+      path: AppRouter.findDoctor,
+      name: AppRouter.findDoctor,
+      pageBuilder: (context, state) => CustomTransitionPage(
+        child: const FindDoctorScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(0.5, 0.0);
+          const end = Offset.zero;
+          final tween = Tween(begin: begin, end: end);
+          final offsetAnimation = animation.drive(tween);
+          return SlideTransition(
+            position: offsetAnimation,
+            child: FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+          );
+        },
+      ),
+    ),
+
+    GoRoute(
+      path: AppRouter.doctorDetail,
+      name: AppRouter.doctorDetail,
+      pageBuilder: (context, state) => CustomTransitionPage(
+        child: const DoctorDetailScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(0.5, 0.0);
+          const end = Offset.zero;
+          final tween = Tween(begin: begin, end: end);
+          final offsetAnimation = animation.drive(tween);
+          return SlideTransition(
+            position: offsetAnimation,
+            child: FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+          );
+        },
+      ),
+    ),
+    GoRoute(
+      path: AppRouter.booking,
+      name: AppRouter.booking,
+      pageBuilder: (context, state) => CustomTransitionPage(
+        child: const BookingDoctorScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(0.5, 0.0);
+          const end = Offset.zero;
+          final tween = Tween(begin: begin, end: end);
+          final offsetAnimation = animation.drive(tween);
+          return SlideTransition(
+            position: offsetAnimation,
+            child: FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+          );
+        },
+      ),
+    ),
+    GoRoute(
+      path: AppRouter.articles,
+      name: AppRouter.articles,
+      pageBuilder: (context, state) => CustomTransitionPage(
+        child: const ArticlesScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(0.5, 0.0);
+          const end = Offset.zero;
+          final tween = Tween(begin: begin, end: end);
+          final offsetAnimation = animation.drive(tween);
+          return SlideTransition(
+            position: offsetAnimation,
+            child: FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+          );
+        },
+      ),
+    ),
+    ShellRoute(
+      builder: (context, state, child) => HomeScreen(child: child),
+      parentNavigatorKey: navigationKey,
+      routes: [
+        GoRoute(
+          path: AppRouter.main,
+          name: AppRouter.main,
+          pageBuilder: (context, state) => CustomTransitionPage(
+            child: const MainScreen(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(0.5, 0.0);
+              const end = Offset.zero;
+              final tween = Tween(begin: begin, end: end);
+              final offsetAnimation = animation.drive(tween);
+              return SlideTransition(
+                position: offsetAnimation,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: child,
+                ),
+              );
+            },
+          ),
+        ),
+        GoRoute(
+          path: AppRouter.schedule,
+          name: AppRouter.schedule,
+          pageBuilder: (context, state) => CustomTransitionPage(
+            child: const ScheduleScreen(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(0.5, 0.0);
+              const end = Offset.zero;
+              final tween = Tween(begin: begin, end: end);
+              final offsetAnimation = animation.drive(tween);
+              return SlideTransition(
+                position: offsetAnimation,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: child,
+                ),
+              );
+            },
+          ),
+        ),
+        GoRoute(
+          path: AppRouter.profile,
+          name: AppRouter.profile,
+          pageBuilder: (context, state) => CustomTransitionPage(
+            child: const ProfileScreen(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(0.5, 0.0);
+              const end = Offset.zero;
+              final tween = Tween(begin: begin, end: end);
+              final offsetAnimation = animation.drive(tween);
+              return SlideTransition(
+                position: offsetAnimation,
+                child: FadeTransition(
+                  opacity: animation,
+                  child: child,
+                ),
+              );
+            },
+          ),
+        ),
+      ],
     ),
   ],
 );

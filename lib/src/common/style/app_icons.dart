@@ -6,11 +6,14 @@ class AppIcons {
   static const String arrowRight = "assets/icons/arrow-right.svg";
   static const String phone = "assets/icons/black_phone.svg";
   static const String order = "assets/icons/buy.svg";
-  static const String calendar = "assets/icons/Calendar.svg";
+  static const String calendar1 = "assets/icons/calendar1.svg";
+  static const String calendar2 = "assets/icons/calendar2.svg";
+  static const String calendar3 = "assets/icons/calendar_date.svg";
   static const String call = "assets/icons/Call.svg";
   static const String caLory = "assets/icons/calory.svg";
   static const String camera = "assets/icons/Camera.svg";
   static const String cardiologist = "assets/icons/Cardiologist.svg";
+  static const String oclock = "assets/icons/oclock.svg";
   static const String chat = "assets/icons/chat.svg";
   static const String backButton = "assets/icons/backButton.svg";
   static const String basket = "assets/icons/Delete.svg";

@@ -108,7 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "You can consult your problem to the doctor"),
         "You_successfully_reset": MessageLookupByLibrary.simpleMessage(
             "You have successfully reset your password."),
-        "about": MessageLookupByLibrary.simpleMessage("about"),
+        "about": MessageLookupByLibrary.simpleMessage("About"),
         "aditional_discount":
             MessageLookupByLibrary.simpleMessage("Aditional Discount"),
         "admin_fee": MessageLookupByLibrary.simpleMessage("Admin Fee"),
@@ -124,11 +124,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "change": MessageLookupByLibrary.simpleMessage("Change"),
         "chat_doctor": MessageLookupByLibrary.simpleMessage("Chat Doctor"),
         "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
+        "chest_pain": MessageLookupByLibrary.simpleMessage("Chest pain"),
         "completed": MessageLookupByLibrary.simpleMessage("Completed"),
         "confirm_address":
             MessageLookupByLibrary.simpleMessage("Confirm your address"),
         "confirm_location":
             MessageLookupByLibrary.simpleMessage("Confirm Location"),
+        "confirmed": MessageLookupByLibrary.simpleMessage("Confirmed"),
+        "consultation": MessageLookupByLibrary.simpleMessage("Consultation"),
         "consultion_start":
             MessageLookupByLibrary.simpleMessage("Consultion Start"),
         "date": MessageLookupByLibrary.simpleMessage("Date"),
@@ -164,10 +167,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Product on Sale"),
         "psikeater": MessageLookupByLibrary.simpleMessage("Psikeater"),
         "read": MessageLookupByLibrary.simpleMessage("read"),
+        "read_more": MessageLookupByLibrary.simpleMessage("Read more"),
+        "reason": MessageLookupByLibrary.simpleMessage("Reason"),
         "receive_code": MessageLookupByLibrary.simpleMessage(
             "Didn’t receive the code? Resend"),
         "recent_doctors":
-            MessageLookupByLibrary.simpleMessage("Your_Recent_Doctors"),
+            MessageLookupByLibrary.simpleMessage("Your Recent Doctors"),
         "related_articles":
             MessageLookupByLibrary.simpleMessage("Related Articles"),
         "reschedule": MessageLookupByLibrary.simpleMessage("Reschedule"),
@@ -183,6 +188,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "upcoming": MessageLookupByLibrary.simpleMessage("Upcoming"),
         "upload_prescription":
             MessageLookupByLibrary.simpleMessage("Upload Prescription"),
+        "view_schedule": MessageLookupByLibrary.simpleMessage("View Schedule"),
         "wrong_password": MessageLookupByLibrary.simpleMessage(
             "*The password you entered is wrong"),
         "you_confirmation": MessageLookupByLibrary.simpleMessage(

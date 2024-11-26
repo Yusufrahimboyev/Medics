@@ -620,20 +620,20 @@ class S {
     );
   }
 
-  /// `Your_Recent_Doctors`
+  /// `Your Recent Doctors`
   String get recent_doctors {
     return Intl.message(
-      'Your_Recent_Doctors',
+      'Your Recent Doctors',
       name: 'recent_doctors',
       desc: '',
       args: [],
     );
   }
 
-  /// `about`
+  /// `About`
   String get about {
     return Intl.message(
-      'about',
+      'About',
       name: 'about',
       desc: '',
       args: [],
@@ -1080,11 +1080,31 @@ class S {
     );
   }
 
+  /// `View Schedule`
+  String get view_schedule {
+    return Intl.message(
+      'View Schedule',
+      name: 'view_schedule',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `My Cart`
   String get my_cart {
     return Intl.message(
       'My Cart',
       name: 'my_cart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirmed`
+  String get confirmed {
+    return Intl.message(
+      'Confirmed',
+      name: 'confirmed',
       desc: '',
       args: [],
     );
@@ -1135,6 +1155,16 @@ class S {
     return Intl.message(
       'Ambulance',
       name: 'ambulance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Consultation`
+  String get consultation {
+    return Intl.message(
+      'Consultation',
+      name: 'consultation',
       desc: '',
       args: [],
     );
@@ -1195,6 +1225,36 @@ class S {
     return Intl.message(
       'Logout',
       name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Read more`
+  String get read_more {
+    return Intl.message(
+      'Read more',
+      name: 'read_more',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reason`
+  String get reason {
+    return Intl.message(
+      'Reason',
+      name: 'reason',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chest pain`
+  String get chest_pain {
+    return Intl.message(
+      'Chest pain',
+      name: 'chest_pain',
       desc: '',
       args: [],
     );
