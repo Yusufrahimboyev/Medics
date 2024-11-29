@@ -58,6 +58,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Find your desire healt solution"),
         "Forgot_Password":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+        "Forgot_Your_Password":
+            MessageLookupByLibrary.simpleMessage("Forgot Your Password?"),
         "General": MessageLookupByLibrary.simpleMessage("General"),
         "Get_connect": MessageLookupByLibrary.simpleMessage(
             "Get connect our Online Consultation"),
@@ -82,8 +84,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "Psychologist": MessageLookupByLibrary.simpleMessage("Psychologist"),
         "Recommended_Doctors":
             MessageLookupByLibrary.simpleMessage("Recommended Doctors"),
-        "Reset_Password":
-            MessageLookupByLibrary.simpleMessage("Reset Password"),
+        "Resend": MessageLookupByLibrary.simpleMessage("Resend"),
+        "Reset_Password": MessageLookupByLibrary.simpleMessage(
+            "You have successfully reset your password."),
         "Search_articles":
             MessageLookupByLibrary.simpleMessage("Search articles, news..."),
         "Search_doctor_drugs": MessageLookupByLibrary.simpleMessage(
@@ -133,6 +136,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Consultion Start"),
         "date": MessageLookupByLibrary.simpleMessage("Date"),
         "doctor_detail": MessageLookupByLibrary.simpleMessage("Doctor Detail"),
+        "emailVerification": MessageLookupByLibrary.simpleMessage(
+            "Enter code that we have sent to your"),
+        "emailVerification2": MessageLookupByLibrary.simpleMessage("email"),
+        "email_confirmation": MessageLookupByLibrary.simpleMessage(
+            "Enter your email or your phone number, we will send you confirmation code"),
         "faqs": MessageLookupByLibrary.simpleMessage("FAQs"),
         "find_specialist": MessageLookupByLibrary.simpleMessage(
             "Find a lot of specialist doctors in one place"),
@@ -163,8 +171,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Product on Sale"),
         "psikeater": MessageLookupByLibrary.simpleMessage("Psikeater"),
         "read": MessageLookupByLibrary.simpleMessage("read"),
-        "receive_code": MessageLookupByLibrary.simpleMessage(
-            "Didn’t receive the code? Resend"),
+        "receive_code":
+            MessageLookupByLibrary.simpleMessage("Didn’t receive the code? "),
         "recent_doctors":
             MessageLookupByLibrary.simpleMessage("Your_Recent_Doctors"),
         "related_articles":
@@ -172,7 +180,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "reschedule": MessageLookupByLibrary.simpleMessage("Reschedule"),
         "schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
+        "skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "subtotal": MessageLookupByLibrary.simpleMessage("Subtotal"),
+        "successfully_registered": MessageLookupByLibrary.simpleMessage(
+            "Your account has been successfully registered"),
         "taxes": MessageLookupByLibrary.simpleMessage("Taxes"),
         "total": MessageLookupByLibrary.simpleMessage("Total"),
         "trending_Articles":
@@ -182,9 +193,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "upcoming": MessageLookupByLibrary.simpleMessage("Upcoming"),
         "upload_prescription":
             MessageLookupByLibrary.simpleMessage("Upload Prescription"),
+        "verificationCode":
+            MessageLookupByLibrary.simpleMessage("Enter Verification Code"),
         "wrong_password": MessageLookupByLibrary.simpleMessage(
-            "*The password you entered is wrong"),
-        "you_confirmation": MessageLookupByLibrary.simpleMessage(
-            "Enter your email or your phone number, we will send you confirmation code")
+            "*The password you entered is wrong")
       };
 }

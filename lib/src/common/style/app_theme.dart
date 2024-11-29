@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class AppTheme{
   const AppTheme._();
-  static ThemeData light=ThemeData(
+  static ThemeData light = ThemeData(
     useMaterial3: true,
     colorScheme: lightColorScheme,
     fontFamily: "Inter"
   );
-  static ThemeData dark=ThemeData(
+  static ThemeData dark = ThemeData(
     useMaterial3: true,
     colorScheme: lightColorScheme,
   );
@@ -16,7 +16,7 @@ class AppTheme{
 
 const ColorScheme lightColorScheme = ColorScheme(
   brightness: Brightness.light,
-  primary: Color(0xff000000),
+  primary: Color(0xff101623),// text color
   onPrimary: Color(0xffffffff),
   primaryContainer: Color(0xffF5F7FF),
   onPrimaryContainer: Color(0xff199A8E),//main_color
@@ -26,15 +26,15 @@ const ColorScheme lightColorScheme = ColorScheme(
   onPrimaryFixedVariant: Color(0xffA1A8B0),//text_color
   secondary: Color(0xffA1A8B0),//container_Color
   onSecondary: Color(0xffADADAD),//search_color
-  secondaryContainer: Color(0xffcce8e2),
+  secondaryContainer: Color(0xffA1A8B0),// skip text color
   onSecondaryContainer: Color(0xff000000),
-  secondaryFixed: Color(0xffd6dedd),
+  secondaryFixed: Color(0xff717784),// login enjoy text
   secondaryFixedDim: Color(0xffb2c0be),
   onSecondaryFixed: Color(0xff171e1d),
-  onSecondaryFixedVariant: Color(0xff1e2827),
+  onSecondaryFixedVariant: Color(0xff3B4453),// check box
   tertiary: Color(0xffE8F3F1),//card_color
-  onTertiary: Color(0xffffffff),
-  tertiaryContainer: Color(0xffcfe5ff),
+  onTertiary: Color(0xffE5E7EB),// border color logos
+  tertiaryContainer: Color(0xffD3D6DA),// border color 2
   onTertiaryContainer: Color(0xff000000),
   tertiaryFixed: Color(0xffd4dce4),
   tertiaryFixedDim: Color(0xffb0bdc9),

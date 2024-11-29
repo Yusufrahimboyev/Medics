@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../dependency/dependency.dart';
 
 class MyAppScope extends StatefulWidget {

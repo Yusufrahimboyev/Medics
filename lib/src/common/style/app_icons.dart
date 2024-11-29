@@ -2,6 +2,9 @@ class AppIcons {
   const AppIcons._();
 
   static const String ambulance = "assets/icons/ambulance.svg";
+  static const String doctor1 = "assets/images/doctor1.png";
+  static const String doctor2 = "assets/images/doctor2.png";
+  static const String doctor3 = "assets/images/doctor3.png";
   static const String apple = "assets/icons/Apple.svg";
   static const String arrowRight = "assets/icons/arrow-right.svg";
   static const String phone = "assets/icons/black_phone.svg";
@@ -39,11 +42,13 @@ class AppIcons {
   static const String notification = "assets/icons/notification.svg";
   static const String paperclip = "assets/icons/paperclip.svg";
   static const String pill = "assets/icons/pill.svg";
+  static const String medics = "assets/icons/medics.svg";
   static const String plus = "assets/icons/plus.svg";
   static const String profile = "assets/icons/profile.svg";
   static const String search = "assets/icons/search.svg";
   static const String shprist = "assets/icons/shprist.svg";
   static const String sms = "assets/icons/sms.svg";
+  static const String greenSms = "assets/icons/green_sms.svg";
   static const String star = "assets/icons/star.svg";
   static const String tooth = "assets/icons/tooth.svg";
   static const String user = "assets/icons/user.svg";

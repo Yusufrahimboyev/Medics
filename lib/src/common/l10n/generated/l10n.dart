@@ -60,6 +60,46 @@ class S {
     );
   }
 
+  /// `Enter Verification Code`
+  String get verificationCode {
+    return Intl.message(
+      'Enter Verification Code',
+      name: 'verificationCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter code that we have sent to your`
+  String get emailVerification {
+    return Intl.message(
+      'Enter code that we have sent to your',
+      name: 'emailVerification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `email`
+  String get emailVerification2 {
+    return Intl.message(
+      'email',
+      name: 'emailVerification2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your account has been successfully registered`
+  String get successfully_registered {
+    return Intl.message(
+      'Your account has been successfully registered',
+      name: 'successfully_registered',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Find a lot of specialist doctors in one place`
   String get find_specialist {
     return Intl.message(
@@ -125,6 +165,16 @@ class S {
     return Intl.message(
       'Login',
       name: 'Login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot Your Password?`
+  String get Forgot_Your_Password {
+    return Intl.message(
+      'Forgot Your Password?',
+      name: 'Forgot_Your_Password',
       desc: '',
       args: [],
     );
@@ -270,20 +320,30 @@ class S {
     );
   }
 
-  /// `Enter your email or your phone number, we will send you confirmation code`
-  String get you_confirmation {
+  /// `Resend`
+  String get Resend {
     return Intl.message(
-      'Enter your email or your phone number, we will send you confirmation code',
-      name: 'you_confirmation',
+      'Resend',
+      name: 'Resend',
       desc: '',
       args: [],
     );
   }
 
-  /// `Reset Password`
+  /// `Enter your email or your phone number, we will send you confirmation code`
+  String get email_confirmation {
+    return Intl.message(
+      'Enter your email or your phone number, we will send you confirmation code',
+      name: 'email_confirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have successfully reset your password.`
   String get Reset_Password {
     return Intl.message(
-      'Reset Password',
+      'You have successfully reset your password.',
       name: 'Reset_Password',
       desc: '',
       args: [],
@@ -300,10 +360,20 @@ class S {
     );
   }
 
-  /// `Didn’t receive the code? Resend`
+  /// `Skip`
+  String get skip {
+    return Intl.message(
+      'Skip',
+      name: 'skip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Didn’t receive the code? `
   String get receive_code {
     return Intl.message(
-      'Didn’t receive the code? Resend',
+      'Didn’t receive the code? ',
       name: 'receive_code',
       desc: '',
       args: [],

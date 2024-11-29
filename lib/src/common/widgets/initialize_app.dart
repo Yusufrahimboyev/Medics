@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:dio/dio.dart';
 import 'package:medics/src/common/constants/constants.dart';
 import 'package:medics/src/common/dependency/dependency.dart';
+import 'package:medics/src/common/service/api_service.dart';
+import 'package:medics/src/features/auth/data/auth_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class InitializeApp {
@@ -21,10 +23,15 @@ class InitializeApp {
       receiveTimeout: const Duration(seconds: 30),
     ));
 
+    final ApiService apiService = ApiService(dio: dio);
+
+    final authRepository = AuthRepositoryImpl(apiService: apiService);
+
     return AppDependency(
       sharedPreferences: shp,
       locale: locale,
       theme: theme,
+      authRepository: authRepository,
     );
   }
 }
