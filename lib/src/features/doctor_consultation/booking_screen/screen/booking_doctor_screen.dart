@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:medics/src/common/router/app_router.dart';
 import 'package:medics/src/common/utils/context_extension.dart';
 import 'package:medics/src/features/doctor_consultation/booking_screen/widgets/date_reason.dart';
-import 'package:medics/src/features/doctor_consultation/doctor_detail_screen/widgets/success_dialog.dart';
 import '../../../../common/style/app_icons.dart';
 import '../../../../common/style/app_images.dart';
 import '../../../../common/widgets/my_card.dart';
+import '../../../../common/widgets/success_dialog.dart';
 
 class BookingDoctorScreen extends StatefulWidget {
   const BookingDoctorScreen({super.key});
@@ -23,9 +24,7 @@ class _BookingDoctorScreenState extends State<BookingDoctorScreen> {
         backgroundColor: context.colors.onPrimary,
         scrolledUnderElevation: 0,
         centerTitle: true,
-        leading:  const CupertinoNavigationBarBackButton(
-
-        ),
+        leading: const CupertinoNavigationBarBackButton(),
         title: Text(
           context.lang.appointmnet,
           style: context.textTheme.titleLarge?.copyWith(
@@ -212,7 +211,9 @@ class _BookingDoctorScreenState extends State<BookingDoctorScreen> {
                   onPressed: () {
                     showDialog(
                       context: context,
-                      builder: (BuildContext context) => const SuccessDialog(),
+                      builder: (BuildContext context) =>  SuccessDialog(
+                        route: AppRouter.schedule, title: context.lang.go_schedule,
+                      ),
                     );
                   },
                   child: Padding(

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:intl/intl.dart';
+
 import 'package:medics/src/common/style/app_icons.dart';
 import 'package:medics/src/common/utils/context_extension.dart';
 
-import '../../../../common/style/app_images.dart';
+
 
 class ScheduleCards extends StatelessWidget {
   final String title;
@@ -31,7 +31,7 @@ class ScheduleCards extends StatelessWidget {
           color: context.colors.tertiary,
         ),
         shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(20),
         ),
         color: context.colors.onPrimary,
@@ -64,7 +64,7 @@ class ScheduleCards extends StatelessWidget {
                 CircleAvatar(
                   radius: 24,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.all(
+                    borderRadius: const BorderRadius.all(
                       Radius.circular(88),
                     ),
                     child: Image(
@@ -74,7 +74,7 @@ class ScheduleCards extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 25),
+            const SizedBox(height: 25),
             Row(
               children: [
                 SvgPicture.asset(
@@ -83,20 +83,20 @@ class ScheduleCards extends StatelessWidget {
                       context.colors.tertiaryFixed, BlendMode.srcATop),
                   height: 16,
                 ),
-                SizedBox(width: 6),
+                const SizedBox(width: 6),
                 Text(
                     style: context.textTheme.labelMedium?.copyWith(
                       color: context.colors.tertiaryFixed,
                     ),
                     date),
-                SizedBox(width: 6),
+                const SizedBox(width: 6),
                 SvgPicture.asset(
                   AppIcons.oclock,
                   colorFilter: ColorFilter.mode(
                       context.colors.tertiaryFixed, BlendMode.srcATop),
                   height: 16,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 6,
                 ),
                 Text(
@@ -104,14 +104,14 @@ class ScheduleCards extends StatelessWidget {
                       color: context.colors.tertiaryFixed,
                     ),
                     time),
-                SizedBox(
+                const SizedBox(
                   width: 6,
                 ),
                 CircleAvatar(
                   radius: 5,
                   backgroundColor: context.colors.onTertiaryFixed,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 4,
                 ),
                 Text(
@@ -129,7 +129,7 @@ class ScheduleCards extends StatelessWidget {
                   style: ButtonStyle(
                     backgroundColor:
                         WidgetStatePropertyAll(context.colors.tertiary),
-                    shape: WidgetStatePropertyAll(
+                    shape: const WidgetStatePropertyAll(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(10),
@@ -152,7 +152,7 @@ class ScheduleCards extends StatelessWidget {
                   style: ButtonStyle(
                     backgroundColor: WidgetStatePropertyAll(
                         context.colors.onPrimaryContainer),
-                    shape: WidgetStatePropertyAll(
+                    shape: const WidgetStatePropertyAll(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(10),

@@ -1,29 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medics/src/common/style/app_icons.dart';
-
 import 'package:medics/src/common/utils/context_extension.dart';
 
 import '../../../../common/router/app_router.dart';
+import '../../../../common/style/app_icons.dart';
 
-class PopularProductList extends StatelessWidget {
+class ProductOnsaleList extends StatelessWidget {
   final String imageUrl;
   final String title;
-  final String count;
+  final String capacity;
   final String price;
+  final String discount;
 
-  const PopularProductList(
+
+  const ProductOnsaleList(
       {super.key,
       required this.imageUrl,
       required this.title,
-      required this.count,
-      required this.price});
+      required this.capacity,
+      required this.price,
+      required this.discount,
+     });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 100,
+      width: 120,
       child: DecoratedBox(
         decoration: BoxDecoration(
           shape: BoxShape.rectangle,
@@ -36,11 +39,12 @@ class PopularProductList extends StatelessWidget {
           ),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+              padding: const EdgeInsets.symmetric(vertical: 10),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Image.asset(
                     imageUrl,
@@ -62,7 +66,7 @@ class PopularProductList extends StatelessWidget {
                         fontWeight: FontWeight.w600),
                   ),
                   Text(
-                    count,
+                    capacity,
                     style: context.textTheme.bodySmall?.copyWith(
                         color: context.colors.onSecondary,
                         fontWeight: FontWeight.w600),
@@ -77,8 +81,18 @@ class PopularProductList extends StatelessWidget {
                             color: context.colors.primary,
                             fontWeight: FontWeight.w600),
                       ),
+                      Text(
+                        "\$$discount",
+                        style: context.textTheme.labelSmall?.copyWith(
+                            decoration: TextDecoration.lineThrough,
+                            decorationColor:
+                                context.colors.onSecondaryContainer,
+                            decorationThickness: 1,
+                            color: context.colors.onSecondary,
+                            fontWeight: FontWeight.w600),
+                      ),
                       InkWell(
-                        onTap: () {
+                        onTap: (){
                           context.push(AppRouter.drugDetail);
                         },
                         child: SvgPicture.asset(AppIcons.plus),

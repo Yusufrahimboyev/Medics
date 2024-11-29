@@ -13,7 +13,7 @@ class DateCard extends StatelessWidget {
               height: 64,
               child: FilterChip(
                 labelPadding: EdgeInsets.zero,
-                shape: RoundedRectangleBorder(
+                shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(
                     Radius.circular(15),
                   ),

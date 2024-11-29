@@ -37,14 +37,14 @@ class MyCard extends StatelessWidget {
         child: Row(
           children: [
             DecoratedBox(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.all(
                   Radius.circular(20),
                 ),
               ),
               child: ClipRRect(
-                borderRadius: BorderRadius.all(
+                borderRadius: const BorderRadius.all(
                   Radius.circular(8),
                 ),
                 child: Image(
@@ -125,7 +125,7 @@ class MyCard extends StatelessWidget {
                         width: 6,
                       ),
                       Text(
-                        "${distance} m away",
+                        "$distance m away",
                         style: context.textTheme.titleSmall?.copyWith(
                             color: context.colors.onSecondary,
                             fontWeight: FontWeight.w500),

@@ -36,7 +36,7 @@ class _DateReasonState extends State<DateReason> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               width: 16,
             ),
             Column(
@@ -52,7 +52,7 @@ class _DateReasonState extends State<DateReason> {
                 ),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             Column(
               children: [
                 Text(
@@ -88,7 +88,7 @@ class _DateReasonState extends State<DateReason> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               width: 16,
             ),
             Column(
@@ -104,7 +104,7 @@ class _DateReasonState extends State<DateReason> {
                 ),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             Column(
               children: [
                 Text(

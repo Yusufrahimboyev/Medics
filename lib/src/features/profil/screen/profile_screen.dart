@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:medics/src/common/utils/context_extension.dart';
+import 'package:medics/src/features/profil/widgets/log_out_dialog.dart';
+import 'package:medics/src/features/profil/widgets/profile_list.dart';
+
+import '../../../common/style/app_icons.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -7,7 +12,143 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 24),
+            child: SvgPicture.asset(AppIcons.menyu),
+          ),
+        ],
+        backgroundColor: context.colors.onTertiaryFixedVariant,
+        scrolledUnderElevation: 0,
+      ),
       backgroundColor: context.colors.onPrimary,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            DecoratedBox(
+              decoration:
+                  BoxDecoration(color: context.colors.onTertiaryFixedVariant),
+              child: SizedBox(
+                width: double.infinity,
+                child: Column(
+                  children: [
+                    const SizedBox(height: 20),
+                    Stack(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: context.colors.primary,
+                          radius: 60,
+                        ),
+                        Positioned(
+                          top: 94,
+                          left: 90,
+                          child: CircleAvatar(
+                            radius: 12,
+                            backgroundColor: context.colors.onPrimary,
+                            child: SvgPicture.asset(
+                              AppIcons.camera,
+                              width: 12,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      child: Text(
+                        "Your name",
+                        style: context.textTheme.titleLarge?.copyWith(
+                            color: context.colors.onPrimary,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            DecoratedBox(
+              decoration: BoxDecoration(
+                  color: context.colors.onPrimary,
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  )),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+                child: Column(
+                  children: [
+                    ProfileList(
+                      icon: AppIcons.heart,
+                      title: context.lang.my_saved,
+                      function: () {},
+                    ),
+                    Divider(
+                      color: context.colors.tertiary,
+                    ),
+                    ProfileList(
+                      icon: AppIcons.document,
+                      title: context.lang.appointmnet,
+                      function: () {},
+                    ),
+                    Divider(
+                      color: context.colors.tertiary,
+                    ),
+                    ProfileList(
+                      icon: AppIcons.wallet,
+                      title: context.lang.payment_method,
+                      function: () {},
+                    ),
+                    Divider(
+                      color: context.colors.tertiary,
+                    ),
+                    ProfileList(
+                      icon: AppIcons.chat,
+                      title: context.lang.faqs,
+                      function: () {
+                      },
+                    ),
+                    Divider(
+                      color: context.colors.tertiary,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 12),
+                      child: InkWell(
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) =>
+                                  const LogOutDialog());
+                        },
+                        child: Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 24,
+                              backgroundColor: context.colors.tertiary,
+                              child: SvgPicture.asset(AppIcons.logout),
+                            ),
+                            const SizedBox(width: 10),
+                            Text(
+                              context.lang.logout,
+                              style: context.textTheme.titleLarge?.copyWith(
+                                  color: context.colors.error,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                            const Spacer(),
+                            SvgPicture.asset(AppIcons.arrowRight),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }

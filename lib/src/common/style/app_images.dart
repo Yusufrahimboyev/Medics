@@ -5,4 +5,7 @@ class AppImages {
   static const String man = "assets/images/man.png";
   static const String pills = "assets/images/pills.png";
   static const String articles = "assets/images/articles.png";
+  static const String tabletka = "assets/images/tabletka.png";
+  static const String dori = "assets/images/dori.png";
+  static const String health = "assets/images/health_line.png";
 }

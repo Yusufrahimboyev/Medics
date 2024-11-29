@@ -40,8 +40,8 @@ class DoctorDetailScreen extends StatelessWidget {
         child: ListView(
 
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 12),
+            const Padding(
+              padding: EdgeInsets.only(top: 12),
               child: MyCard(
                   title: "Dr. Marcus Horizon",
                   subtitle: "Chardiologist",
@@ -49,7 +49,7 @@ class DoctorDetailScreen extends StatelessWidget {
                   distance: "5.7",
                   image: AppImages.man),
             ),
-            SizedBox(
+            const SizedBox(
               height: 14,
             ),
             Text(

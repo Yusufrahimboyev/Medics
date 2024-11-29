@@ -270,6 +270,16 @@ class S {
     );
   }
 
+  /// `Go to Schedule`
+  String get go_schedule {
+    return Intl.message(
+      'Go to Schedule',
+      name: 'go_schedule',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Enter your email or your phone number, we will send you confirmation code`
   String get you_confirmation {
     return Intl.message(
@@ -680,6 +690,16 @@ class S {
     );
   }
 
+  /// `Are you sure to log out of your account?`
+  String get are_you_sure {
+    return Intl.message(
+      'Are you sure to log out of your account?',
+      name: 'are_you_sure',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Change`
   String get change {
     return Intl.message(
@@ -1000,6 +1020,16 @@ class S {
     );
   }
 
+  /// `Description`
+  String get description {
+    return Intl.message(
+      'Description',
+      name: 'description',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Pharmacy`
   String get pharmacy {
     return Intl.message(
@@ -1220,10 +1250,10 @@ class S {
     );
   }
 
-  /// `Logout`
+  /// `Log out`
   String get logout {
     return Intl.message(
-      'Logout',
+      'Log out',
       name: 'logout',
       desc: '',
       args: [],

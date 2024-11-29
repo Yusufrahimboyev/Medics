@@ -27,7 +27,7 @@ const ColorScheme lightColorScheme = ColorScheme(
   secondary: Color(0xffA1A8B0),//container_Color
   onSecondary: Color(0xffADADAD),//search_color
   secondaryContainer: Color(0xff717784),//about_color
-  onSecondaryContainer: Color(0xff000000),
+  onSecondaryContainer: Color(0xff656565),//cross_color
   secondaryFixed: Color(0xffd6dedd),
   secondaryFixedDim: Color(0xffb2c0be),
   onSecondaryFixed: Color(0xff171e1d),
@@ -39,8 +39,8 @@ const ColorScheme lightColorScheme = ColorScheme(
   tertiaryFixed: Color(0xff555555),//time_color
   tertiaryFixedDim: Color(0xffb0bdc9),
   onTertiaryFixed: Color(0xff7BEB78),//circle_color
-  onTertiaryFixedVariant: Color(0xff202a36),
-  error: Color(0xffba1a1a),
+  onTertiaryFixedVariant: Color(0xff48C7BC),//profile_color
+  error: Color(0xffFF5C5C),
   onError: Color(0xffffffff),
   errorContainer: Color(0xffffdad6),
   onErrorContainer: Color(0xff000000),

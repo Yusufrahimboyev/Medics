@@ -102,7 +102,7 @@ class TrendingArticlesList extends StatelessWidget {
                             color: context.colors.onSecondary,
                             fontWeight: FontWeight.w500),
                       ),
-                      SizedBox(width: 2),
+                      const SizedBox(width: 2),
                       CircleAvatar(
                         radius: 2,
                         backgroundColor: context.colors.onSecondary,

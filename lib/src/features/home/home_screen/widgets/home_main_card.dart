@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medics/src/common/router/app_router.dart';
-import 'package:medics/src/common/style/app_images.dart';
 
 import 'package:medics/src/common/utils/context_extension.dart';
 
 class HomeMainCard extends StatelessWidget {
-  const HomeMainCard({super.key});
+  final String buttonTitle;
+  final String title;
+  final String imageUrl;
+
+  const HomeMainCard(
+      {super.key,
+      required this.buttonTitle,
+      required this.title,
+      required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +39,7 @@ class HomeMainCard extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         vertical: 16, horizontal: 18),
                     child: Text(
-                      context.lang.Early_protection,
+                      title,
                       style: context.textTheme.titleMedium
                           ?.copyWith(fontWeight: FontWeight.w600),
                     ),
@@ -47,7 +54,7 @@ class HomeMainCard extends StatelessWidget {
                       onPressed: () {
                         context.push(AppRouter.topDoctor);
                       },
-                      child: Text(context.lang.learn),
+                      child: Text(buttonTitle),
                     ),
                   ),
                 ],
@@ -70,7 +77,7 @@ class HomeMainCard extends StatelessWidget {
                       Positioned(
                         left: 20,
                         child: Image(
-                          image: AssetImage(AppImages.girl),
+                          image: AssetImage(imageUrl),
                         ),
                       ),
                     ],

@@ -77,7 +77,7 @@ class _MainScreenState extends State<MainScreen> {
                                     context.colors.onSecondary,
                                     BlendMode.srcATop),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 8,
                               ),
                               Text(
@@ -100,7 +100,9 @@ class _MainScreenState extends State<MainScreen> {
                           text: context.lang.Doctor,
                           icons: AppIcons.doctor),
                       MyStack(
-                          function: () {},
+                          function: () {
+                            context.push(AppRouter.pharmacy);
+                          },
                           text: context.lang.pharmacy,
                           icons: AppIcons.pill),
                       MyStack(
@@ -108,7 +110,9 @@ class _MainScreenState extends State<MainScreen> {
                           text: context.lang.Hospital,
                           icons: AppIcons.hospital),
                       MyStack(
-                          function: () {},
+                          function: () {
+                            context.push(AppRouter.ambulance);
+                          },
                           text: context.lang.Ambulance,
                           icons: AppIcons.ambulance),
                     ],
@@ -116,7 +120,11 @@ class _MainScreenState extends State<MainScreen> {
                 ],
               ),
             ),
-            const HomeMainCard(),
+            HomeMainCard(
+              buttonTitle: context.lang.learn,
+              title: context.lang.Early_protection,
+              imageUrl: AppImages.girl,
+            ),
             const TopDoctorList(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -130,7 +138,7 @@ class _MainScreenState extends State<MainScreen> {
                         fontWeight: FontWeight.w600),
                   ),
                   TextButton(
-                    style: ButtonStyle(
+                    style: const ButtonStyle(
                       overlayColor: WidgetStateColor.transparent,
                     ),
                     onPressed: () {
@@ -146,14 +154,18 @@ class _MainScreenState extends State<MainScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 12),
-            ArticleList(
-              image: AppImages.pills,
-              title:
-                  'The 25 Healthiest Fruits You Can Eat, According to a Nutritionist',
-              readTime: '5 min read',
-              datetime: 'Jun 10, 2021 ',
-            ),
+            const SizedBox(height: 12),
+            for (int i = 0; i < 10; i++)
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: ArticleList(
+                  image: AppImages.pills,
+                  title:
+                      'The 25 Healthiest Fruits You Can Eat, According to a Nutritionist',
+                  readTime: '5 min read',
+                  datetime: 'Jun 10, 2021 ',
+                ),
+              ),
           ],
         ),
       ),

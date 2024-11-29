@@ -116,6 +116,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ambulance": MessageLookupByLibrary.simpleMessage("Ambulance"),
         "appointmnet": MessageLookupByLibrary.simpleMessage("Appointmnet"),
         "arcticles": MessageLookupByLibrary.simpleMessage("Arcticles"),
+        "are_you_sure": MessageLookupByLibrary.simpleMessage(
+            "Are you sure to log out of your account?"),
         "back_home": MessageLookupByLibrary.simpleMessage("Back to Home"),
         "booking": MessageLookupByLibrary.simpleMessage("Booking"),
         "buy_now": MessageLookupByLibrary.simpleMessage("Buy Now"),
@@ -135,16 +137,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "consultion_start":
             MessageLookupByLibrary.simpleMessage("Consultion Start"),
         "date": MessageLookupByLibrary.simpleMessage("Date"),
+        "description": MessageLookupByLibrary.simpleMessage("Description"),
         "doctor_detail": MessageLookupByLibrary.simpleMessage("Doctor Detail"),
         "faqs": MessageLookupByLibrary.simpleMessage("FAQs"),
         "find_specialist": MessageLookupByLibrary.simpleMessage(
             "Find a lot of specialist doctors in one place"),
         "go_home": MessageLookupByLibrary.simpleMessage("Go to home"),
+        "go_schedule": MessageLookupByLibrary.simpleMessage("Go to Schedule"),
         "group": MessageLookupByLibrary.simpleMessage("Group"),
         "learn": MessageLookupByLibrary.simpleMessage("Learn more"),
         "login_enjoy": MessageLookupByLibrary.simpleMessage(
             "Login to enjoy the features we’ve provided, and stay healthy!"),
-        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "logout": MessageLookupByLibrary.simpleMessage("Log out"),
         "message": MessageLookupByLibrary.simpleMessage("Message"),
         "my_cart": MessageLookupByLibrary.simpleMessage("My Cart"),
         "my_saved": MessageLookupByLibrary.simpleMessage("My Saved"),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:medics/src/common/style/app_images.dart';
 import 'package:medics/src/common/utils/context_extension.dart';
+import 'package:medics/src/features/home/home_screen/widgets/article_list.dart';
 import 'package:medics/src/features/online_pharmacy/articles/widgets/trending_articles_list.dart';
 import '../../../../common/style/app_icons.dart';
 
@@ -33,7 +34,7 @@ class ArticlesScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            SizedBox(height: 33),
+            const SizedBox(height: 33),
             DecoratedBox(
               decoration: BoxDecoration(
                 color: context.colors.onPrimaryFixed,
@@ -66,7 +67,7 @@ class ArticlesScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Expanded(
               child: ListView(
                 children: [
@@ -97,7 +98,7 @@ class ArticlesScreen extends StatelessWidget {
                     height: 220,
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) => TrendingArticlesList(
+                        itemBuilder: (context, index) => const TrendingArticlesList(
                               title: 'Covid-19',
                               subtitle:
                                   'Comparing the AstraZeneca and Sinovac COVID-19 Vaccines',
@@ -133,6 +134,14 @@ class ArticlesScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+                  for(int i=0;i<10;i++)
+                    const ArticleList(
+                      image: AppImages.pills,
+                      title:
+                      "The 25 Healthiest Fruits You Can Eat, According to a Nutritionist whiwuhef9uwhefowei ekfinhiouweb",
+                      readTime: "5min read",
+                      datetime: "Jun 10, 2021 ",
+                    ),
                 ],
               ),
             ),

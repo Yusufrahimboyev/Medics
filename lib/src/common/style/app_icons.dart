@@ -3,7 +3,7 @@ class AppIcons {
 
   static const String ambulance = "assets/icons/ambulance.svg";
   static const String apple = "assets/icons/Apple.svg";
-  static const String arrowRight = "assets/icons/arrow-right.svg";
+  static const String arrowRight = "assets/icons/arrow_right.svg";
   static const String phone = "assets/icons/black_phone.svg";
   static const String order = "assets/icons/buy.svg";
   static const String calendar1 = "assets/icons/calendar1.svg";
@@ -11,6 +11,7 @@ class AppIcons {
   static const String calendar3 = "assets/icons/calendar_date.svg";
   static const String call = "assets/icons/Call.svg";
   static const String caLory = "assets/icons/calory.svg";
+  static const String logout = "assets/icons/log_out.svg";
   static const String camera = "assets/icons/Camera.svg";
   static const String cardiologist = "assets/icons/Cardiologist.svg";
   static const String oclock = "assets/icons/oclock.svg";
@@ -31,15 +32,18 @@ class AppIcons {
   static const String google = "assets/icons/google.svg";
   static const String virus = "assets/icons/virus.svg";
   static const String heart = "assets/icons/heart.svg";
+  static const String heartSelected = "assets/icons/Heart_selected.svg";
   static const String heartImpUls = "assets/icons/heartimpuls.svg";
   static const String home1 = "assets/icons/home1.svg";
   static const String home2 = "assets/icons/home2.svg";
+  static const String log = "assets/icons/log.svg";
   static const String hospital = "assets/icons/hospital.svg";
   static const String weight = "assets/icons/ibs.svg";
   static const String location = "assets/icons/location.svg";
   static const String lock = "assets/icons/lock.svg";
   static const String lungs = "assets/icons/lungs.svg";
   static const String menyu = "assets/icons/menyu.svg";
+  static const String minus = "assets/icons/minus.svg";
   static const String notification = "assets/icons/notification.svg";
   static const String paperclip = "assets/icons/paperclip.svg";
   static const String pill = "assets/icons/pill.svg";
@@ -55,4 +59,5 @@ class AppIcons {
   static const String videoCamera = "assets/icons/videocamera.svg";
   static const String visa = "assets/icons/visa.svg";
   static const String wallet = "assets/icons/Wallet.svg";
+  static const String socet = "assets/icons/Buy.svg";
 }

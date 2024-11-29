@@ -120,11 +120,11 @@ class _TopDoctorListState extends State<TopDoctorList> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 2,
                                   ),
                                   SvgPicture.asset(AppIcons.location,height: 16,),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 2,
                                   ),
                                   Text(
