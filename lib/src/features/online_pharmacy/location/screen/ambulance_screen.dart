@@ -27,7 +27,10 @@ class _AmbulanceScreenState extends State<AmbulanceScreen> {
               color: context.colors.primary, fontWeight: FontWeight.w600),
         ),
       ),
-      body: YandexMap(),
+      body: YandexMap(
+        onMapCreated: (YandexMapController controller) {},
+
+      ),
     );
   }
 }
