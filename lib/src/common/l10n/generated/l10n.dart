@@ -1259,6 +1259,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Email entered wrong`
+  String get email_entered_wrong {
+    return Intl.message(
+      'Email entered wrong',
+      name: 'email_entered_wrong',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

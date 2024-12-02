@@ -120,5 +120,6 @@
   "my_saved": "My Saved",
   "appointmnet": "Appointmnet",
   "faqs": "FAQs",
-  "logout": "Logout"
+  "logout": "Logout",
+  "email_entered_wrong": "Email entered wrong"
 }

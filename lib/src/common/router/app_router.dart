@@ -10,6 +10,7 @@ import 'package:medics/src/features/auth/screen/sign_up_screen.dart';
 import 'package:medics/src/features/auth/screen/sign_up_verify_screen.dart';
 import 'package:medics/src/features/splash/screens/onboarding_screen1.dart';
 import 'package:medics/src/features/splash/screens/onboarding_screen4.dart';
+import '../../features/auth/bloc/log_in/log_in_bloc.dart';
 import '../../features/auth/screen/verify_screen.dart';
 import '../../features/home/home_screen.dart';
 import '../../features/splash/screens/onboarding_screen2.dart';
@@ -53,7 +54,7 @@ GlobalKey<NavigatorState> navigationKey = GlobalKey<NavigatorState>();
 
 GoRouter router = GoRouter(
   navigatorKey: navigationKey,
-  initialLocation: AppRouter.signUp,
+  initialLocation: AppRouter.logIn,
   routes: [
     GoRoute(
       path: AppRouter.home,
@@ -165,7 +166,10 @@ GoRouter router = GoRouter(
       name: AppRouter.logIn,
       pageBuilder: (context, state) => CustomTransitionPage(
         key: state.pageKey,
-        child: const LoginScreen(), // Your screen
+        child: BlocProvider(
+          create: (BuildContext context) => LogInBloc(),
+          child: const LoginScreen(),
+        ),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           const begin = Offset(0.5, 0.0);
           const end = Offset.zero;
@@ -189,7 +193,7 @@ GoRouter router = GoRouter(
         child: BlocProvider(
           create: (BuildContext context) => AuthBloc(),
           child: const SignUpScreen(),
-        ), // Your screen
+        ),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           const begin = Offset(0.5, 0.0);
           const end = Offset.zero;

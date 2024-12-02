@@ -9,6 +9,10 @@ abstract interface class IAuthRepository {
     required String email,
     required String password,
   });
+  Future<Map<String, Object?>> loginIn({
+    required String email,
+    required String password,
+  });
 
   Future<Map<String, Object?>> signUpVerify(
       {required String email, required String code});
@@ -55,5 +59,21 @@ class AuthRepositoryImpl implements IAuthRepository {
     } on Object catch (e) {
       return {};
     }
+  }
+
+  @override
+  Future<Map<String, Object?>> loginIn({
+    required String email,
+    required String password,
+  }) async {
+   try{
+     final response = apiService.request(Urls.authLogIn,method: Method.post,data: {
+       "username": email,
+       "password": password,
+     });
+     return response;
+   } on Object catch (e) {
+     return {};
+   }
   }
 }

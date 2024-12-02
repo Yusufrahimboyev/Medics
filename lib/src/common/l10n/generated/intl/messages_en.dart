@@ -141,6 +141,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailVerification2": MessageLookupByLibrary.simpleMessage("email"),
         "email_confirmation": MessageLookupByLibrary.simpleMessage(
             "Enter your email or your phone number, we will send you confirmation code"),
+        "email_entered_wrong":
+            MessageLookupByLibrary.simpleMessage("Email entered wrong"),
         "faqs": MessageLookupByLibrary.simpleMessage("FAQs"),
         "find_specialist": MessageLookupByLibrary.simpleMessage(
             "Find a lot of specialist doctors in one place"),

@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medics/src/common/utils/context_extension.dart';
-import '../../../common/router/app_router.dart';
 import '../../../common/style/app_icons.dart';
 import '../bloc/sign_up/auth_bloc.dart';
 
@@ -259,17 +258,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const SizedBox(height: 40),
                 ElevatedButton(
                   onPressed: () {
-                    // showDialog(
-                    //   context: context,
-                    //   builder: (context) => SuccessWidget(
-                    //     title: context.lang.Success,
-                    //     message: context.lang.successfully_registered,
-                    //     buttonText: context.lang.Login,
-                    //     onPressed: () {
-                    //       context.push(AppRouter.logIn);
-                    //     },
-                    //   ),
-                    // );
                     context.read<AuthBloc>().add(
                           SignUp$AuthEvent(
                             name: nameController.text.trim(),
