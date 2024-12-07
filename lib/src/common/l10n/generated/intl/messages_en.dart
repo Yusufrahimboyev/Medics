@@ -114,7 +114,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "admin_fee": MessageLookupByLibrary.simpleMessage("Admin Fee"),
         "all": MessageLookupByLibrary.simpleMessage("All"),
         "ambulance": MessageLookupByLibrary.simpleMessage("Ambulance"),
-        "appointmnet": MessageLookupByLibrary.simpleMessage("Appointmnet"),
+        "app_info": MessageLookupByLibrary.simpleMessage("App Info"),
+        "appointmnet": MessageLookupByLibrary.simpleMessage("Appointment"),
         "arcticles": MessageLookupByLibrary.simpleMessage("Arcticles"),
         "are_you_sure": MessageLookupByLibrary.simpleMessage(
             "Are you sure to log out of your account?"),
@@ -136,22 +137,27 @@ class MessageLookup extends MessageLookupByLibrary {
         "consultation": MessageLookupByLibrary.simpleMessage("Consultation"),
         "consultion_start":
             MessageLookupByLibrary.simpleMessage("Consultion Start"),
+        "continui": MessageLookupByLibrary.simpleMessage("Continue"),
         "date": MessageLookupByLibrary.simpleMessage("Date"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "doctor_detail": MessageLookupByLibrary.simpleMessage("Doctor Detail"),
+        "edit_profile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
+        "enter": MessageLookupByLibrary.simpleMessage(
+            "Enter the amount you want to top up"),
         "faqs": MessageLookupByLibrary.simpleMessage("FAQs"),
         "find_specialist": MessageLookupByLibrary.simpleMessage(
             "Find a lot of specialist doctors in one place"),
         "go_home": MessageLookupByLibrary.simpleMessage("Go to home"),
         "go_schedule": MessageLookupByLibrary.simpleMessage("Go to Schedule"),
         "group": MessageLookupByLibrary.simpleMessage("Group"),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
         "learn": MessageLookupByLibrary.simpleMessage("Learn more"),
         "login_enjoy": MessageLookupByLibrary.simpleMessage(
             "Login to enjoy the features we’ve provided, and stay healthy!"),
         "logout": MessageLookupByLibrary.simpleMessage("Log out"),
         "message": MessageLookupByLibrary.simpleMessage("Message"),
         "my_cart": MessageLookupByLibrary.simpleMessage("My Cart"),
-        "my_saved": MessageLookupByLibrary.simpleMessage("My Saved"),
+        "my_saved": MessageLookupByLibrary.simpleMessage("My Saved Articles"),
         "or": MessageLookupByLibrary.simpleMessage("OR"),
         "payment_detail":
             MessageLookupByLibrary.simpleMessage("Payment Detail"),
@@ -181,9 +187,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Related Articles"),
         "reschedule": MessageLookupByLibrary.simpleMessage("Reschedule"),
         "schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
+        "select_the_payment_method": MessageLookupByLibrary.simpleMessage(
+            "Select the payment method you want to use"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
         "subtotal": MessageLookupByLibrary.simpleMessage("Subtotal"),
         "taxes": MessageLookupByLibrary.simpleMessage("Taxes"),
+        "top_up": MessageLookupByLibrary.simpleMessage("Top Up"),
+        "top_up_ewallet":
+            MessageLookupByLibrary.simpleMessage("Top Up E-wallet"),
         "total": MessageLookupByLibrary.simpleMessage("Total"),
         "trending_Articles":
             MessageLookupByLibrary.simpleMessage("Trending Articles"),
@@ -196,6 +207,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "wrong_password": MessageLookupByLibrary.simpleMessage(
             "*The password you entered is wrong"),
         "you_confirmation": MessageLookupByLibrary.simpleMessage(
-            "Enter your email or your phone number, we will send you confirmation code")
+            "Enter your email or your phone number, we will send you confirmation code"),
+        "you_have_successfully": MessageLookupByLibrary.simpleMessage(
+            "You have successfully top up e-wallet for "),
+        "your_balance": MessageLookupByLibrary.simpleMessage("Your Balance")
       };
 }

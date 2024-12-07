@@ -22,9 +22,9 @@ class InitializeApp {
     ));
 
     return AppDependency(
-      sharedPreferences: shp,
+
       locale: locale,
-      theme: theme,
+      shp: shp, theme: theme
     );
   }
 }

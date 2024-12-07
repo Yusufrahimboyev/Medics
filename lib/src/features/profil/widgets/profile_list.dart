@@ -25,7 +25,7 @@ class ProfileList extends StatelessWidget {
             CircleAvatar(
               radius: 24,
               backgroundColor: context.colors.tertiary,
-              child: SvgPicture.asset(icon),
+              child: SvgPicture.asset(icon,colorFilter: ColorFilter.mode(context.colors.onPrimaryContainer, BlendMode.srcATop),),
             ),
             const SizedBox(width: 10),
             Text(

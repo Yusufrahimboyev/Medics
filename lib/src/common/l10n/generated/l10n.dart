@@ -1140,11 +1140,61 @@ class S {
     );
   }
 
+  /// `Top Up`
+  String get top_up {
+    return Intl.message(
+      'Top Up',
+      name: 'top_up',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Subtotal`
   String get subtotal {
     return Intl.message(
       'Subtotal',
       name: 'subtotal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the amount you want to top up`
+  String get enter {
+    return Intl.message(
+      'Enter the amount you want to top up',
+      name: 'enter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continui {
+    return Intl.message(
+      'Continue',
+      name: 'continui',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Balance`
+  String get your_balance {
+    return Intl.message(
+      'Your Balance',
+      name: 'your_balance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Top Up E-wallet`
+  String get top_up_ewallet {
+    return Intl.message(
+      'Top Up E-wallet',
+      name: 'top_up_ewallet',
       desc: '',
       args: [],
     );
@@ -1220,20 +1270,20 @@ class S {
     );
   }
 
-  /// `My Saved`
+  /// `My Saved Articles`
   String get my_saved {
     return Intl.message(
-      'My Saved',
+      'My Saved Articles',
       name: 'my_saved',
       desc: '',
       args: [],
     );
   }
 
-  /// `Appointmnet`
+  /// `Appointment`
   String get appointmnet {
     return Intl.message(
-      'Appointmnet',
+      'Appointment',
       name: 'appointmnet',
       desc: '',
       args: [],
@@ -1285,6 +1335,56 @@ class S {
     return Intl.message(
       'Chest pain',
       name: 'chest_pain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select the payment method you want to use`
+  String get select_the_payment_method {
+    return Intl.message(
+      'Select the payment method you want to use',
+      name: 'select_the_payment_method',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have successfully top up e-wallet for `
+  String get you_have_successfully {
+    return Intl.message(
+      'You have successfully top up e-wallet for ',
+      name: 'you_have_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Profile`
+  String get edit_profile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'edit_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `App Info`
+  String get app_info {
+    return Intl.message(
+      'App Info',
+      name: 'app_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
       desc: '',
       args: [],
     );

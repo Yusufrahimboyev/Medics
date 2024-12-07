@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
+import 'package:medics/src/common/router/app_router.dart';
 import 'package:medics/src/common/utils/context_extension.dart';
 import 'package:medics/src/features/profil/widgets/log_out_dialog.dart';
 import 'package:medics/src/features/profil/widgets/profile_list.dart';
 
-import '../../../common/style/app_icons.dart';
+import '../../../../common/style/app_icons.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -13,11 +16,17 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 24),
-            child: SvgPicture.asset(AppIcons.menyu),
-          ),
+         PopupMenuButton(itemBuilder: (BuildContext context){
+           return[
+             PopupMenuItem(child: Text(context.lang.edit_profile),onTap: (){
+
+             },),
+             PopupMenuItem(child: Text(context.lang.language),onTap: (){},),
+             PopupMenuItem(child: Text(context.lang.app_info ),onTap: (){},),
+           ];
+         }),
         ],
         backgroundColor: context.colors.onTertiaryFixedVariant,
         scrolledUnderElevation: 0,
@@ -80,7 +89,7 @@ class ProfileScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     ProfileList(
-                      icon: AppIcons.heart,
+                      icon: AppIcons.notsaved,
                       title: context.lang.my_saved,
                       function: () {},
                     ),
@@ -98,13 +107,15 @@ class ProfileScreen extends StatelessWidget {
                     ProfileList(
                       icon: AppIcons.wallet,
                       title: context.lang.payment_method,
-                      function: () {},
+                      function: () {
+                        context.push(AppRouter.wallet);
+                      },
                     ),
                     Divider(
                       color: context.colors.tertiary,
                     ),
                     ProfileList(
-                      icon: AppIcons.chat,
+                      icon: AppIcons.faq,
                       title: context.lang.faqs,
                       function: () {
                       },

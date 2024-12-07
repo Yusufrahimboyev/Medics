@@ -25,6 +25,8 @@ class AppIcons {
   static const String doneEmail = "assets/icons/done_dialog.svg";
   static const String doubleDone = "assets/icons/double_done.svg";
   static const String edit = "assets/icons/edit.svg";
+  static const String saved = "assets/icons/saved.svg";
+  static const String notsaved = "assets/icons/notsaved.svg";
   static const String exclamation = "assets/icons/exclamation.svg";
   static const String eyeSlash = "assets/icons/eye_slash.svg";
   static const String facebook = "assets/icons/facebook.svg";
