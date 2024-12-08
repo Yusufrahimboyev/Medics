@@ -18,6 +18,7 @@ class SignUpVerifyScreen extends StatefulWidget {
 
 class _SignUpVerifyScreenState extends State<SignUpVerifyScreen> {
   final TextEditingController controller = TextEditingController();
+   bool borderPin = true;
   @override
   Widget build(BuildContext context) {
     final defaultPinTheme = PinTheme(
@@ -49,9 +50,7 @@ class _SignUpVerifyScreenState extends State<SignUpVerifyScreen> {
 
     final submittedPinTheme = defaultPinTheme.copyWith(
       decoration: BoxDecoration(
-        color: context.colors.onPrimary,
-        borderRadius: BorderRadius.circular(18),
-        border: Border.all(color: context.colors.onPrimaryContainer),
+
       ),
     );
 
@@ -104,12 +103,15 @@ class _SignUpVerifyScreenState extends State<SignUpVerifyScreen> {
                     ),
                   ),
                   const SizedBox(width: 10),
-                  Text(
-                    widget.email,
-                    style: context.textTheme.bodyLarge?.copyWith(
-                      fontSize: 17,
-                      fontWeight: FontWeight.w500,
-                      color: context.colors.primary.withOpacity(0.8),
+                  Expanded(
+                    child: Text(
+                      widget.email,
+                      style: context.textTheme.bodyLarge?.copyWith(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                        color: context.colors.primary.withOpacity(0.8),
+                      ),
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                 ],
@@ -121,11 +123,31 @@ class _SignUpVerifyScreenState extends State<SignUpVerifyScreen> {
                 length: 4,
                 defaultPinTheme: defaultPinTheme,
                 focusedPinTheme: focusedPinTheme,
-                submittedPinTheme: submittedPinTheme,
+                submittedPinTheme: PinTheme(
+                  width: 70,
+                  height: 70,
+                  margin: const EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
+                  textStyle: context.textTheme.bodyLarge?.copyWith(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                    color: context.colors.primary,
+                  ),
+                  decoration: BoxDecoration(
+                    color: context.colors.onPrimary,
+                    borderRadius: BorderRadius.circular(18),
+                    border: Border.all(color: !state.status.isError ? context.colors.onPrimaryContainer : context.colors.error),
+                  ),
+                ),
                 keyboardType: TextInputType.number,
                 onCompleted: (pin) {
-                  // Tasdiqlash kodi kiritilganda ishlaydi
-                  print("Verification Code Entered: $pin");
+                  context.read<SignUpVerifyBloc>().add(
+                    Verify$SignUpVerifyEvent(
+                      email: widget.email,
+                      context: context,
+                      code: controller.text.trim(),
+                    ),
+                  );
                 },
               ),
               const SizedBox(height: 50),

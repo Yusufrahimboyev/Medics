@@ -15,3 +15,14 @@ final class Verify$SignUpVerifyEvent extends SignUpVerifyEvent {
     required this.code,
   });
 }
+final class Resend$SignUpVerify extends SignUpVerifyEvent {
+  final String email;
+  final BuildContext context;
+
+  const Resend$SignUpVerify({
+    required this.email,
+    required this.context,
+  }
+  );
+}
+

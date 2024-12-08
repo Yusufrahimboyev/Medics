@@ -140,6 +140,16 @@ class S {
     );
   }
 
+  /// `Reset Password`
+  String get reset_password_button {
+    return Intl.message(
+      'Reset Password',
+      name: 'reset_password_button',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Login to enjoy the features we’ve provided, and stay healthy!`
   String get login_enjoy {
     return Intl.message(
@@ -180,10 +190,10 @@ class S {
     );
   }
 
-  /// `Don’t have an account? Sign Up`
+  /// `Don’t have an account?`
   String get Dont_account {
     return Intl.message(
-      'Don’t have an account? Sign Up',
+      'Don’t have an account?',
       name: 'Dont_account',
       desc: '',
       args: [],

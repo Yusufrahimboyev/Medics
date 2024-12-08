@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medics/src/common/router/app_router.dart';
 import 'package:medics/src/common/utils/context_extension.dart';
+import 'package:medics/src/features/auth/bloc/new_password/new_password_bloc.dart';
 import '../../../common/style/app_icons.dart';
 
 class NewPasswordScreen extends StatefulWidget {
@@ -13,8 +15,9 @@ class NewPasswordScreen extends StatefulWidget {
 }
 
 class _NewPasswordScreenState extends State<NewPasswordScreen> {
-   final TextEditingController passwordController = TextEditingController();
-   final TextEditingController confirmPasswordController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
   bool isConfirmPasswordFilled = false;
   bool isPasswordFilled = false;
   bool vision = false;
@@ -34,6 +37,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
       });
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,16 +73,15 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                 Text(
                   context.lang.Create_new_password,
                   style: context.textTheme.bodyLarge?.copyWith(
-                    fontWeight: FontWeight.w400,
-                      color: context.colors.onPrimaryFixedVariant
-                  ),
+                      fontWeight: FontWeight.w400,
+                      color: context.colors.onPrimaryFixedVariant),
                 ),
               ],
             ),
             const SizedBox(height: 20),
             TextFormField(
-              validator: (a){
-                if(a == ''){
+              validator: (a) {
+                if (a == '') {
                   return context.lang.wrong_password;
                 }
                 return null;
@@ -87,7 +90,9 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
               obscureText: vision,
               decoration: InputDecoration(
                 filled: true,
-                fillColor: isPasswordFilled ? context.colors.onPrimaryFixed.withOpacity(0.3) : context.colors.onPrimaryFixed.withOpacity(0.3),
+                fillColor: isPasswordFilled
+                    ? context.colors.onPrimaryFixed.withOpacity(0.3)
+                    : context.colors.onPrimaryFixed.withOpacity(0.3),
                 prefixIcon: Icon(
                   isPasswordFilled ? Icons.lock : Icons.lock,
                   color: isPasswordFilled ? Colors.green : Colors.grey,
@@ -95,16 +100,19 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(24),
                   borderSide: BorderSide(
-                    color: isPasswordFilled ? context.colors.onPrimary : context.colors.onPrimaryFixed.withOpacity(0.3),
+                    color: isPasswordFilled
+                        ? context.colors.onPrimary
+                        : context.colors.onPrimaryFixed.withOpacity(0.3),
                     width: 1.5,
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(24),
-                  borderSide:  BorderSide(
+                  borderSide: BorderSide(
                     color: context.colors.secondaryFixed.withOpacity(0.3),
                     width: 2.0,
-                  ),),
+                  ),
+                ),
                 hintText: context.lang.Enter_password,
                 hintStyle: context.textTheme.bodyLarge?.copyWith(
                   color: context.colors.secondary,
@@ -129,8 +137,8 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
             const SizedBox(height: 15),
             // Password TextField
             TextFormField(
-              validator: (a){
-                if(a == ''){
+              validator: (a) {
+                if (a == '') {
                   return context.lang.wrong_password;
                 }
                 return null;
@@ -139,7 +147,9 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
               obscureText: vision2,
               decoration: InputDecoration(
                 filled: true,
-                fillColor: isConfirmPasswordFilled ? context.colors.onPrimaryFixed.withOpacity(0.3) : context.colors.onPrimaryFixed.withOpacity(0.3),
+                fillColor: isConfirmPasswordFilled
+                    ? context.colors.onPrimaryFixed.withOpacity(0.3)
+                    : context.colors.onPrimaryFixed.withOpacity(0.3),
                 prefixIcon: Icon(
                   isConfirmPasswordFilled ? Icons.lock : Icons.lock,
                   color: isConfirmPasswordFilled ? Colors.green : Colors.grey,
@@ -147,16 +157,19 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(24),
                   borderSide: BorderSide(
-                    color: isConfirmPasswordFilled ? context.colors.onPrimary : context.colors.onPrimaryFixed.withOpacity(0.3),
+                    color: isConfirmPasswordFilled
+                        ? context.colors.onPrimary
+                        : context.colors.onPrimaryFixed.withOpacity(0.3),
                     width: 1.5,
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(24),
-                  borderSide:  BorderSide(
+                  borderSide: BorderSide(
                     color: context.colors.secondaryFixed.withOpacity(0.3),
                     width: 2.0,
-                  ),),
+                  ),
+                ),
                 hintText: context.lang.Confirm_password,
                 hintStyle: context.textTheme.bodyLarge?.copyWith(
                   color: context.colors.secondary,
@@ -179,38 +192,34 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
               ),
             ),
             const SizedBox(height: 40),
-            ElevatedButton(
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (context) => SuccessWidget(
-                    title: context.lang.Success,
-                    message: context.lang.successfully_registered,
-                    buttonText: context.lang.Login,
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
+            BlocBuilder<NewPasswordBloc,NewPasswordState>(
+              builder:(context,state) => ElevatedButton(
+                onPressed: () {
+                  context.read<NewPasswordBloc>().add(
+                      NewPassword$NewPasswordEvent(
+                          password: passwordController.text.trim(),
+                          context: context));
+                },
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(350, 60),
+                  backgroundColor: const Color(0xFF4E9A88),
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
                   ),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                fixedSize: const Size(350, 60),
-                backgroundColor: const Color(0xFF4E9A88),
-                padding: const EdgeInsets.symmetric(vertical: 12),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
                 ),
+                child: state.status.isLoading ? const CircularProgressIndicator():Text(context.lang.Create_Password,
+                    style: context.textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        color: context.colors.onPrimary)),
               ),
-              child: Text(context.lang.Create_Password,
-                  style: context.textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
-                      color: context.colors.onPrimary)),
             ),
           ],
         ),
       ),
-    );  }
+    );
+  }
 }
 
 class SuccessWidget extends StatelessWidget {

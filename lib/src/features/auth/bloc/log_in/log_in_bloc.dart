@@ -25,7 +25,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
     emit(state.copyWith(status: Status.loading));
     try {
       final result =
-          await event.context.dependencies.authRepository.loginIn(
+          await event.context.dependencies.authRepository.logIn(
         email: event.email,
         password: event.password,
       );
@@ -35,15 +35,18 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
         await event.context.dependencies.sharedPreferences.setString(Constants.token, result["data"] as String);
         await event.context.dependencies.sharedPreferences
             .setString(Constants.userEmail, event.email);
-        showDialog(
-          context: event.context,
-          builder: (context) => SuccessWidget(
-            title: context.lang.Welcome_Back,
-            message: context.lang.Once_again,
-            buttonText: context.lang.go_home,
-            onPressed: () => event.context.go(AppRouter.home),
-          ),
-        );
+        print(event.context.dependencies.sharedPreferences.getString(Constants.token));
+        if(event.context.mounted){
+          showDialog(
+            context: event.context,
+            builder: (context) => SuccessWidget(
+              title: context.lang.Welcome_Back,
+              message: context.lang.Once_again,
+              buttonText: context.lang.go_home,
+              onPressed: () => event.context.go(AppRouter.home),
+            ),
+          );
+        }
         emit(state.copyWith(status: Status.success));
       } else {
         emit(state.copyWith(status: Status.error));

@@ -43,8 +43,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Create your new password to login"),
         "Dentist": MessageLookupByLibrary.simpleMessage("Dentist"),
         "Doctor": MessageLookupByLibrary.simpleMessage("Doctor"),
-        "Dont_account": MessageLookupByLibrary.simpleMessage(
-            "Don’t have an account? Sign Up"),
+        "Dont_account":
+            MessageLookupByLibrary.simpleMessage("Don’t have an account?"),
         "Drugs_Detail": MessageLookupByLibrary.simpleMessage("Drugs Detail"),
         "Early_protection": MessageLookupByLibrary.simpleMessage(
             "Early protection for your family health"),
@@ -180,6 +180,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "related_articles":
             MessageLookupByLibrary.simpleMessage("Related Articles"),
         "reschedule": MessageLookupByLibrary.simpleMessage("Reschedule"),
+        "reset_password_button":
+            MessageLookupByLibrary.simpleMessage("Reset Password"),
         "schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
