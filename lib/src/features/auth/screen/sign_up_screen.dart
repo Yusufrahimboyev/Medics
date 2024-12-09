@@ -18,22 +18,29 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final RegExp emailRegExp = RegExp("^[a-zA-Z]+[0-9]*[a-zA-Z]*@[a-z]+\.[a-zA-Z]+");
+  final RegExp emailRegExp =
+      RegExp("^[a-zA-Z]+[0-9]*[a-zA-Z]*@[a-z]+\.[a-zA-Z]+");
   final RegExp passwordRegExp = RegExp(r"(\w){8,}");
 
   final formKey = GlobalKey<FormState>();
 
   String? emailValidator(String? value) => switch (value) {
-    String a when !a.contains(emailRegExp) =>
-    context.lang.email_entered_wrong,
-    _ => null,
-  };
+        String a when !a.contains(emailRegExp) =>
+          context.lang.email_entered_wrong,
+        _ => null,
+      };
 
   String? passwordValidator(String? value) => switch (value) {
-    String a when !a.contains(passwordRegExp) =>
-    context.lang.wrong_password,
-    _ => null,
-  };
+        String a when !a.contains(passwordRegExp) =>
+          context.lang.wrong_password,
+        _ => null,
+      };
+
+  String? nameValidator(String? value) => switch (value) {
+        String a when a.isEmpty => context.lang.enter_name,
+        _ => null,
+      };
+
   bool isNameFilled = false;
   bool isEmailFilled = false;
   bool isPasswordFilled = false;
@@ -66,6 +73,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Form(
       key: _formKey,
       child: Scaffold(
+        backgroundColor: context.colors.onPrimary,
         appBar: AppBar(
           backgroundColor: context.colors.onPrimary,
           scrolledUnderElevation: 0,
@@ -96,15 +104,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   TextFormField(
                     controller: nameController,
+                    validator: nameValidator,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: isNameFilled
                           ? context.colors.onPrimaryFixed.withOpacity(0.3)
                           : context.colors.onPrimaryFixed.withOpacity(0.3),
                       prefixIcon: Icon(
-                        isNameFilled
-                            ? Icons.person
-                            : Icons.person,
+                        isNameFilled ? Icons.person : Icons.person,
                         color: isNameFilled ? Colors.green : Colors.grey,
                       ),
                       enabledBorder: OutlineInputBorder(
@@ -263,7 +270,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           textAlign: TextAlign.start,
                           context.lang.I_agree_medidoc_Policy,
                           style: context.textTheme.bodySmall?.copyWith(
-                            fontSize: 11,
                             fontWeight: FontWeight.w400,
                             color: context.colors.onSecondaryFixedVariant,
                           ),
@@ -274,21 +280,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   const SizedBox(height: 40),
                   ElevatedButton(
                     onPressed: () {
-                      context.read<AuthBloc>().add(
-                            SignUp$AuthEvent(
-                              name: nameController.text.trim(),
-                              email: emailController.text.trim(),
-                              password: passwordController.text.trim(),
-                              context: context,
-                            ),
-                          );
+                      if (_formKey.currentState?.validate() ?? false) {
+                        context.read<AuthBloc>().add(
+                              SignUp$AuthEvent(
+                                name: nameController.text.trim(),
+                                email: emailController.text.trim(),
+                                password: passwordController.text.trim(),
+                                context: context,
+                              ),
+                            );
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(350, 60),
                       backgroundColor: const Color(0xFF4E9A88),
                       padding: const EdgeInsets.symmetric(vertical: 12),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30)),
                       ),
                     ),
                     child: state.status.isLoading
@@ -306,22 +314,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     children: [
                       Text(
                         context.lang.Dont_account,
-                        style: context.textTheme.headlineSmall?.copyWith(
-                            fontSize: 17,
+                        style: context.textTheme.titleMedium?.copyWith(
                             fontWeight: FontWeight.w500,
                             color: context.colors.secondaryFixed),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
                       GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           context.push(AppRouter.logIn);
                         },
                         child: Text(
                           context.lang.Sign_Up,
-                          style: context.textTheme.headlineSmall?.copyWith(
-                              fontSize: 17,
+                          style: context.textTheme.titleMedium?.copyWith(
                               fontWeight: FontWeight.w500,
                               color: context.colors.onPrimaryContainer),
                         ),

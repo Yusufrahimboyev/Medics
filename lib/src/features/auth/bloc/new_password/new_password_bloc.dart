@@ -29,9 +29,9 @@ class NewPasswordBloc extends Bloc<NewPasswordEvent, NewPasswordState> {
     try {
       final result =
           await event.context.dependencies.authRepository.newPassword(
-        email: event.context.dependencies.sharedPreferences.getString(Constants.userEmail) ?? "",
+        email: event.context.dependencies.shp.getString(Constants.userEmail) ?? "",
         password: event.password,
-        token: event.context.dependencies.sharedPreferences.getString(Constants.token5 ) ?? "",
+        token: event.context.dependencies.shp.getString(Constants.token5 ) ?? "",
       );
       if ((result["success"] as bool?) != null &&
           result["success"] as bool &&

@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:medics/src/common/router/app_router.dart';
-
 import 'package:medics/src/common/utils/context_extension.dart';
 
 class HomeMainCard extends StatelessWidget {
   final String buttonTitle;
   final String title;
   final String imageUrl;
+  final Function() onTap;
 
   const HomeMainCard(
       {super.key,
       required this.buttonTitle,
       required this.title,
-      required this.imageUrl});
+      required this.imageUrl, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -51,9 +49,7 @@ class HomeMainCard extends StatelessWidget {
                         backgroundColor: WidgetStatePropertyAll(
                             context.colors.onPrimaryContainer),
                       ),
-                      onPressed: () {
-                        context.push(AppRouter.topDoctor);
-                      },
+                      onPressed: onTap,
                       child: Text(buttonTitle),
                     ),
                   ),

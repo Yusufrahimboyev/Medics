@@ -59,7 +59,7 @@ class MyDialog extends StatelessWidget {
                 backgroundColor:
                     WidgetStatePropertyAll(context.colors.onPrimaryContainer),
               ),
-              child: Text(
+              child: const Text(
                 "Text",
               ),
             ),

@@ -17,11 +17,9 @@ import 'package:medics/src/features/payment_method/screen/payment_screen.dart';
 import 'package:medics/src/features/payment_method/top_up/top_up_screen.dart';
 import 'package:medics/src/features/payment_method/second_top_up/screen/top_up_second_screen.dart';
 import 'package:medics/src/features/profil/screen/profile_screen/profile_screen.dart';
-
 import '../../features/home/home_screen/screen/home_screen.dart';
 import '../../features/payment_method/bloc/payment_bloc.dart';
 import '../../features/payment_method/second_top_up/bloc/second_top_up_bloc.dart';
-import 'package:medics/src/common/utils/context_extension.dart';
 import 'package:medics/src/features/auth/bloc/new_password/new_password_bloc.dart';
 import 'package:medics/src/features/auth/bloc/reset_password/reset_pass_bloc.dart';
 import 'package:medics/src/features/auth/bloc/sign_up/auth_bloc.dart';
@@ -35,9 +33,7 @@ import 'package:medics/src/features/splash/screens/onboarding_screen4.dart';
 import '../../features/auth/bloc/log_in/log_in_bloc.dart';
 import '../../features/auth/bloc/password_verify/password_verify_bloc.dart';
 import '../../features/auth/screen/verify_screen.dart';
-import '../../features/home/home_screen.dart';
 import '../../features/splash/screens/onboarding_screen.dart';
-import '../constants/constants.dart';
 
 class AppRouter {
   const AppRouter._();
@@ -79,12 +75,9 @@ GlobalKey<NavigatorState> navigationKey = GlobalKey<NavigatorState>();
 
 GoRouter router = GoRouter(
   navigatorKey: navigationKey,
-  initialLocation: AppRouter.main,
+  initialLocation: AppRouter.onboarding,
   routes: [
     GoRoute(
-      path: AppRouter.home,
-      name: AppRouter.home,
-      redirect: (context, state) => (context.dependencies.sharedPreferences.getString(Constants.token) ?? '').isEmpty ? AppRouter.onboarding : AppRouter.home,
       path: AppRouter.topDoctor,
       name: AppRouter.topDoctor,
       pageBuilder: (context, state) => CustomTransitionPage(
@@ -212,7 +205,7 @@ GoRouter router = GoRouter(
       path: AppRouter.doctorDetail,
       name: AppRouter.doctorDetail,
       pageBuilder: (context, state) => CustomTransitionPage(
-        child:  DoctorDetailScreen(),
+        child: DoctorDetailScreen(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           const begin = Offset(1.0, 1.0);
           const end = Offset.zero;
@@ -293,7 +286,7 @@ GoRouter router = GoRouter(
       name: AppRouter.onboarding,
       pageBuilder: (context, state) => CustomTransitionPage(
         key: state.pageKey,
-        child:  const OnboardingScreen(), // Your screen
+        child: const OnboardingScreen(), // Your screen
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           const begin = Offset(0.5, 0.0);
           const end = Offset.zero;
@@ -314,7 +307,7 @@ GoRouter router = GoRouter(
       name: AppRouter.onboarding2,
       pageBuilder: (context, state) => CustomTransitionPage(
         key: state.pageKey,
-        child:  const OnboardingScreen4(), // Your screen
+        child: const OnboardingScreen4(), // Your screen
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           const begin = Offset(0.5, 0.0);
           const end = Offset.zero;
@@ -383,7 +376,7 @@ GoRouter router = GoRouter(
       name: AppRouter.newPassword,
       pageBuilder: (context, state) => CustomTransitionPage(
         key: state.pageKey,
-        child:BlocProvider(
+        child: BlocProvider(
           create: (BuildContext context) => NewPasswordBloc(),
           child: const NewPasswordScreen(),
         ), // Your screen
@@ -474,7 +467,6 @@ GoRouter router = GoRouter(
         },
       ),
     ),
-]
     GoRoute(
       path: AppRouter.drugDetail,
       name: AppRouter.drugDetail,

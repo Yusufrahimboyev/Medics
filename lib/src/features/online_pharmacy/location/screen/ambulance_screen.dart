@@ -15,7 +15,7 @@ class AmbulanceScreen extends StatefulWidget {
 
 class _AmbulanceScreenState extends State<AmbulanceScreen> {
   final mapController = Completer<YandexMapController>();
-  final Point point=Point(latitude: 41.341391, longitude: 69.286517);
+  final Point point=const Point(latitude: 41.341391, longitude: 69.286517);
 
   void goTocurrentPosition() async {
     final controller = await mapController.future;
@@ -47,7 +47,7 @@ class _AmbulanceScreenState extends State<AmbulanceScreen> {
     }
 
     Position position = await Geolocator.getCurrentPosition(
-      locationSettings: LocationSettings(
+      locationSettings: const LocationSettings(
         accuracy: LocationAccuracy.high,
         distanceFilter: 10,
       ),
@@ -81,7 +81,7 @@ class _AmbulanceScreenState extends State<AmbulanceScreen> {
           );
           controller.moveCamera(
             CameraUpdate.newCameraPosition(
-              CameraPosition(
+              const CameraPosition(
                   target: Point(longitude: 41.341391, latitude: 69.286517),
                   zoom: 16),
             ),

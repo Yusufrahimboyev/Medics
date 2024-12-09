@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:go_router/go_router.dart';
 import 'package:medics/src/common/router/app_router.dart';
 import 'package:medics/src/common/utils/context_extension.dart';
@@ -16,17 +16,23 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
         actions: [
-         PopupMenuButton(itemBuilder: (BuildContext context){
-           return[
-             PopupMenuItem(child: Text(context.lang.edit_profile),onTap: (){
-
-             },),
-             PopupMenuItem(child: Text(context.lang.language),onTap: (){},),
-             PopupMenuItem(child: Text(context.lang.app_info ),onTap: (){},),
-           ];
-         }),
+          PopupMenuButton(itemBuilder: (BuildContext context) {
+            return [
+              PopupMenuItem(
+                child: Text(context.lang.edit_profile),
+                onTap: () {},
+              ),
+              PopupMenuItem(
+                child: Text(context.lang.language),
+                onTap: () {},
+              ),
+              PopupMenuItem(
+                child: Text(context.lang.app_info),
+                onTap: () {},
+              ),
+            ];
+          }),
         ],
         backgroundColor: context.colors.onTertiaryFixedVariant,
         scrolledUnderElevation: 0,
@@ -43,25 +49,9 @@ class ProfileScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     const SizedBox(height: 20),
-                    Stack(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: context.colors.primary,
-                          radius: 60,
-                        ),
-                        Positioned(
-                          top: 94,
-                          left: 90,
-                          child: CircleAvatar(
-                            radius: 12,
-                            backgroundColor: context.colors.onPrimary,
-                            child: SvgPicture.asset(
-                              AppIcons.camera,
-                              width: 12,
-                            ),
-                          ),
-                        )
-                      ],
+                    CircleAvatar(
+                      backgroundColor: context.colors.primary,
+                      radius: 60,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 16),
@@ -117,8 +107,7 @@ class ProfileScreen extends StatelessWidget {
                     ProfileList(
                       icon: AppIcons.faq,
                       title: context.lang.faqs,
-                      function: () {
-                      },
+                      function: () {},
                     ),
                     Divider(
                       color: context.colors.tertiary,
@@ -130,8 +119,14 @@ class ProfileScreen extends StatelessWidget {
                         onTap: () {
                           showDialog(
                               context: context,
-                              builder: (BuildContext context) =>
-                                  const LogOutDialog());
+                              builder: (BuildContext context) => LogOutDialog(
+                                    func: () async {
+                                      await context.dependencies.shp.clear();
+                                      if (context.mounted) {
+                                        context.go(AppRouter.onboarding);
+                                      }
+                                    },
+                                  ));
                         },
                         child: Row(
                           children: [

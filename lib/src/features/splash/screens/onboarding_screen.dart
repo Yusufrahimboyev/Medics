@@ -92,7 +92,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           Column(
             children: [
               SizedBox(
-                height: MediaQuery.of(context).size.height*0.65,
+                height: MediaQuery.of(context).size.height * 0.65,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30.0),
@@ -103,7 +103,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     gradient: LinearGradient(
                       colors: [
                         Color(0xFFF5F7FF), // #F5F7FF
-                        Color(0x00F5F7FF), // #F5F7FF00
+                        Color(0xffF5F7FF), // #F5F7FF00
                       ],
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
@@ -135,31 +135,35 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             child: Row(
                               children: List.generate(
                                 _pages.length,
-                                    (dotIndex) => Container(
+                                (dotIndex) => Container(
                                   margin: const EdgeInsets.only(right: 5),
                                   height: 5,
                                   width: 15,
                                   decoration: BoxDecoration(
                                     color: dotIndex == _currentPage
                                         ? context.colors.onPrimaryContainer
-                                        : context.colors.onPrimaryContainer.withOpacity(0.3),
+                                        : context.colors.onPrimaryContainer
+                                            .withOpacity(0.3),
                                     borderRadius: BorderRadius.circular(16),
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            width: 170,
-                          ),
+                          const Spacer(),
                           ElevatedButton(
                             onPressed: _onNextPressed,
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               padding: const EdgeInsets.all(17),
-                              backgroundColor: context.colors.onPrimaryContainer,
+                              backgroundColor:
+                                  context.colors.onPrimaryContainer,
                             ),
-                            child: SvgPicture.asset(AppIcons.arrowRight),
+                            child: SvgPicture.asset(
+                              AppIcons.arrowRight,
+                              colorFilter: ColorFilter.mode(
+                                  context.colors.onPrimary, BlendMode.srcATop),
+                            ),
                           ),
                         ],
                       ),

@@ -28,7 +28,7 @@ class InitializeApp {
     final authRepository = AuthRepositoryImpl(apiService: apiService);
 
     return AppDependency(
-      sharedPreferences: shp,
+      shp: shp,
       locale: locale,
       theme: theme,
       authRepository: authRepository,

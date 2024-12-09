@@ -6,6 +6,7 @@ class Constants {
   static const String token = "token";
   static const String token5 = "token5";
   static const String userEmail = "userEmail";
+  static const String balance = "balance";
 
 }
 
@@ -17,5 +18,5 @@ class Urls {
   static const String authPasswordConfirm = "/auth/password/confirm";
   static const String authPassword = "/auth/password";
   static const String resetEmailPassword = "/auth/password/resend-code";
-  static const String balance = "balance";
+
 }

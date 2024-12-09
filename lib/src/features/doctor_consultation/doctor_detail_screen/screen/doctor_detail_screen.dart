@@ -11,14 +11,14 @@ import '../../../../common/style/app_images.dart';
 
 class DoctorDetailScreen extends StatefulWidget {
 
-   DoctorDetailScreen({super.key});
+    DoctorDetailScreen({super.key});
 
   @override
   State<DoctorDetailScreen> createState() => _DoctorDetailScreenState();
-  bool selected=true;
 }
 
 class _DoctorDetailScreenState extends State<DoctorDetailScreen> {
+  bool selected=true;
   @override
   Widget build(BuildContext context) {
 
@@ -144,20 +144,20 @@ class _DoctorDetailScreenState extends State<DoctorDetailScreen> {
                   children: [
                     Expanded(
                       child: MyFiltrchip(
-                          selected: widget.selected,
+                          selected: selected,
                           time: "09:00 AM",
                           onTap: (_) {}),
                     ),
 
                     Expanded(
                       child: MyFiltrchip(
-                          selected: widget.selected,
+                          selected: selected,
                           time: "10:00 AM",
                           onTap: (_) {}),
                     ),
                     Expanded(
                       child: MyFiltrchip(
-                          selected: widget.selected,
+                          selected: selected,
                           time: "11:00 AM",
                           onTap: (_) {}),
                     ),
@@ -167,19 +167,19 @@ class _DoctorDetailScreenState extends State<DoctorDetailScreen> {
                   children: [
                     Expanded(
                       child: MyFiltrchip(
-                          selected: widget.selected,
+                          selected: selected,
                           time: "01:00 PM",
                           onTap: (_) {}),
                     ),
                     Expanded(
                       child: MyFiltrchip(
-                          selected:widget.selected ,
+                          selected:selected ,
                           time: "02:00 AM",
                           onTap: (_) {}),
                     ),
                     Expanded(
                       child: MyFiltrchip(
-                          selected: widget.selected,
+                          selected: selected,
                           time: "03:00 AM",
                           onTap: (_) {}),
                     ),
@@ -189,19 +189,19 @@ class _DoctorDetailScreenState extends State<DoctorDetailScreen> {
                   children: [
                     Expanded(
                       child: MyFiltrchip(
-                          selected: widget.selected,
+                          selected: selected,
                           time: "04:00 AM",
                           onTap: (_) {}),
                     ),
                     Expanded(
                       child: MyFiltrchip(
-                          selected: widget.selected,
+                          selected: selected,
                           time: "05:00 AM",
                           onTap: (_) {}),
                     ),
                     Expanded(
                       child: MyFiltrchip(
-                          selected: widget.selected,
+                          selected: selected,
                           time: "06:00 AM",
                           onTap: (_) {}),
                     ),

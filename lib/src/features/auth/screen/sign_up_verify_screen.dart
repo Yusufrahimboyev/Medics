@@ -18,7 +18,8 @@ class SignUpVerifyScreen extends StatefulWidget {
 
 class _SignUpVerifyScreenState extends State<SignUpVerifyScreen> {
   final TextEditingController controller = TextEditingController();
-   bool borderPin = true;
+  bool borderPin = true;
+
   @override
   Widget build(BuildContext context) {
     final defaultPinTheme = PinTheme(
@@ -45,12 +46,6 @@ class _SignUpVerifyScreenState extends State<SignUpVerifyScreen> {
         color: context.colors.onPrimary,
         borderRadius: BorderRadius.circular(18),
         border: Border.all(color: context.colors.onPrimaryContainer),
-      ),
-    );
-
-    final submittedPinTheme = defaultPinTheme.copyWith(
-      decoration: BoxDecoration(
-
       ),
     );
 
@@ -136,18 +131,21 @@ class _SignUpVerifyScreenState extends State<SignUpVerifyScreen> {
                   decoration: BoxDecoration(
                     color: context.colors.onPrimary,
                     borderRadius: BorderRadius.circular(18),
-                    border: Border.all(color: !state.status.isError ? context.colors.onPrimaryContainer : context.colors.error),
+                    border: Border.all(
+                        color: !state.status.isError
+                            ? context.colors.onPrimaryContainer
+                            : context.colors.error),
                   ),
                 ),
                 keyboardType: TextInputType.number,
                 onCompleted: (pin) {
                   context.read<SignUpVerifyBloc>().add(
-                    Verify$SignUpVerifyEvent(
-                      email: widget.email,
-                      context: context,
-                      code: controller.text.trim(),
-                    ),
-                  );
+                        Verify$SignUpVerifyEvent(
+                          email: widget.email,
+                          context: context,
+                          code: controller.text.trim(),
+                        ),
+                      );
                 },
               ),
               const SizedBox(height: 50),

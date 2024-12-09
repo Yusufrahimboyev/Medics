@@ -165,11 +165,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
+                  const SizedBox(height: 15),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      TextButton(
-                        onPressed: () {
+                      InkWell(
+                        overlayColor: WidgetStateColor.transparent,
+                        onTap: () {
                           context.go(AppRouter.resetEp);
                         },
                         child:  Text(

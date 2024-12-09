@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:medics/src/common/utils/context_extension.dart';
 
 class ArticleList extends StatelessWidget {
@@ -34,6 +35,7 @@ class ArticleList extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 12),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 DecoratedBox(
                   decoration: BoxDecoration(
@@ -96,6 +98,10 @@ class ArticleList extends StatelessWidget {
                       )
                     ],
                   ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(right: 12),
+                  child: FaIcon(FontAwesomeIcons.bookmark,size: 16,),
                 ),
               ],
             ),

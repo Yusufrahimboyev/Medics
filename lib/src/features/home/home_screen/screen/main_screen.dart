@@ -56,6 +56,7 @@ class _MainScreenState extends State<MainScreen> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 16, vertical: 22),
                     child: InkWell(
+                      overlayColor: WidgetStateColor.transparent,
                       onTap: () {
                         context.push(AppRouter.findDoctor);
                       },
@@ -96,7 +97,9 @@ class _MainScreenState extends State<MainScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       MyStack(
-                          function: () {},
+                          function: () {
+                            context.push(AppRouter.findDoctor);
+                          },
                           text: context.lang.Doctor,
                           icons: AppIcons.doctor),
                       MyStack(
@@ -105,10 +108,6 @@ class _MainScreenState extends State<MainScreen> {
                           },
                           text: context.lang.pharmacy,
                           icons: AppIcons.pill),
-                      MyStack(
-                          function: () {},
-                          text: context.lang.Hospital,
-                          icons: AppIcons.hospital),
                       MyStack(
                           function: () {
                             context.push(AppRouter.ambulance);
@@ -124,6 +123,33 @@ class _MainScreenState extends State<MainScreen> {
               buttonTitle: context.lang.learn,
               title: context.lang.Early_protection,
               imageUrl: AppImages.girl,
+              onTap: () {},
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    context.lang.Top_Doctor,
+                    style: context.textTheme.titleLarge?.copyWith(
+                        color: context.colors.primary,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  InkWell(
+                    overlayColor: WidgetStateColor.transparent,
+                    onTap: () {
+                      context.push(AppRouter.topDoctor);
+                    },
+                    child: Text(
+                      context.lang.See_all,
+                      style: context.textTheme.titleMedium?.copyWith(
+                          color: context.colors.onPrimaryContainer,
+                          fontWeight: FontWeight.w400),
+                    ),
+                  ),
+                ],
+              ),
             ),
             const TopDoctorList(),
             Padding(

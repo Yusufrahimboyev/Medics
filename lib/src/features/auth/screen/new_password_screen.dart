@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medics/src/common/router/app_router.dart';
+
 import 'package:medics/src/common/utils/context_extension.dart';
 import 'package:medics/src/features/auth/bloc/new_password/new_password_bloc.dart';
 import '../../../common/style/app_icons.dart';

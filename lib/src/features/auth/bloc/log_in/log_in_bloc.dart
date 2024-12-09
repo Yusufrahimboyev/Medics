@@ -32,10 +32,10 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
       if ((result["success"] as bool?) != null &&
           result["success"] as bool &&
           event.context.mounted) {
-        await event.context.dependencies.sharedPreferences.setString(Constants.token, result["data"] as String);
-        await event.context.dependencies.sharedPreferences
+        await event.context.dependencies.shp.setString(Constants.token, result["data"] as String);
+        await event.context.dependencies.shp
             .setString(Constants.userEmail, event.email);
-        print(event.context.dependencies.sharedPreferences.getString(Constants.token));
+        print(event.context.dependencies.shp.getString(Constants.token));
         if(event.context.mounted){
           showDialog(
             context: event.context,
@@ -43,7 +43,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
               title: context.lang.Welcome_Back,
               message: context.lang.Once_again,
               buttonText: context.lang.go_home,
-              onPressed: () => event.context.go(AppRouter.home),
+              onPressed: () => event.context.go(AppRouter.main),
             ),
           );
         }

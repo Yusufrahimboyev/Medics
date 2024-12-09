@@ -9,6 +9,7 @@ abstract interface class IAuthRepository {
     required String email,
     required String password,
   });
+
   Future<Map<String, Object?>> logIn({
     required String email,
     required String password,
@@ -16,9 +17,12 @@ abstract interface class IAuthRepository {
 
   Future<Map<String, Object?>> signUpVerify(
       {required String email, required String code});
+
   Future<Map<String, Object?>> passwordVerify(
       {required String email, required String code});
+
   Future<Map<String, Object?>> resetEmail({required String email});
+
   Future<Map<String, Object?>> newPassword({
     required String email,
     required String password,
@@ -61,7 +65,7 @@ class AuthRepositoryImpl implements IAuthRepository {
         "code": code,
       });
       return response;
-    } on Object catch (e) {
+    } on Object catch (_) {
       return {};
     }
   }
@@ -78,7 +82,7 @@ class AuthRepositoryImpl implements IAuthRepository {
         "password": password,
       });
       return response;
-    } on Object catch (e) {
+    } on Object catch (_) {
       return {};
     }
   }
@@ -91,7 +95,7 @@ class AuthRepositoryImpl implements IAuthRepository {
         "email": email,
       });
       return response;
-    } on Object catch (e) {
+    } on Object catch (_) {
       return {};
     }
   }
@@ -108,13 +112,16 @@ class AuthRepositoryImpl implements IAuthRepository {
         "code": code,
       });
       return response;
-    } on Object catch (e) {
+    } on Object catch (_) {
       return {};
     }
   }
 
   @override
-  Future<Map<String, Object?>> newPassword({required String email, required String password, required String token}) async {
+  Future<Map<String, Object?>> newPassword(
+      {required String email,
+      required String password,
+      required String token}) async {
     try {
       final response = await apiService
           .request(Urls.authPassword, method: Method.post, data: {
@@ -123,7 +130,7 @@ class AuthRepositoryImpl implements IAuthRepository {
         "token": token,
       });
       return response;
-    } on Object catch (e) {
+    } on Object catch (_) {
       return {};
     }
   }

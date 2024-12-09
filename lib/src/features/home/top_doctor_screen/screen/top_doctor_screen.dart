@@ -24,12 +24,6 @@ class TopDoctorScreen extends StatelessWidget {
               color: context.colors.primary, fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 20),
-            child: SvgPicture.asset(AppIcons.menyu),
-          )
-        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

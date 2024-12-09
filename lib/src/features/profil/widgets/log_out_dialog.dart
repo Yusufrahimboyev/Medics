@@ -5,7 +5,9 @@ import 'package:medics/src/common/utils/context_extension.dart';
 import '../../../common/style/app_icons.dart';
 
 class LogOutDialog extends StatelessWidget {
-  const LogOutDialog({super.key});
+  final Function() func;
+
+  const LogOutDialog({super.key, required this.func});
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +37,7 @@ class LogOutDialog extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: TextButton(
-                onPressed: () {
-
-                },
+                onPressed: func,
                 style: ButtonStyle(
                   backgroundColor:
                       WidgetStatePropertyAll(context.colors.onPrimaryContainer),

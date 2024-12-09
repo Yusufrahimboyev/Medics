@@ -330,6 +330,28 @@ class S {
     );
   }
 
+  /// `Go to Schedule`
+  String get go_schedule {
+    return Intl.message(
+      'Go to Schedule',
+      name: 'go_schedule',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your email or your phone number, we will send you confirmation code`
+  String get you_confirmation {
+    return Intl.message(
+      'Enter your email or your phone number, we will send you confirmation code',
+      name: 'you_confirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  // skipped getter for the 'Reset_Password´' key
+
   /// `Resend`
   String get Resend {
     return Intl.message(
@@ -350,11 +372,31 @@ class S {
     );
   }
 
-  /// `You have successfully reset your password.`
-  String get Reset_Password {
+  /// `Confirmation`
+  String get Confirmation {
     return Intl.message(
-      'You have successfully reset your password.',
-      name: 'Reset_Password',
+      'Confirmation',
+      name: 'Confirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Code`
+  String get Code {
+    return Intl.message(
+      'Code',
+      name: 'Code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your code`
+  String get Enter_your_code {
+    return Intl.message(
+      'Enter your code',
+      name: 'Enter_your_code',
       desc: '',
       args: [],
     );
@@ -540,6 +582,16 @@ class S {
     );
   }
 
+  /// `Learn more`
+  String get learn {
+    return Intl.message(
+      'Learn more',
+      name: 'learn',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Chardiologist`
   String get Chardiologist {
     return Intl.message(
@@ -690,20 +742,20 @@ class S {
     );
   }
 
-  /// `Your_Recent_Doctors`
+  /// `Your Recent Doctors`
   String get recent_doctors {
     return Intl.message(
-      'Your_Recent_Doctors',
+      'Your Recent Doctors',
       name: 'recent_doctors',
       desc: '',
       args: [],
     );
   }
 
-  /// `about`
+  /// `About`
   String get about {
     return Intl.message(
-      'about',
+      'About',
       name: 'about',
       desc: '',
       args: [],
@@ -745,6 +797,16 @@ class S {
     return Intl.message(
       'Date',
       name: 'date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure to log out of your account?`
+  String get are_you_sure {
+    return Intl.message(
+      'Are you sure to log out of your account?',
+      name: 'are_you_sure',
       desc: '',
       args: [],
     );
@@ -980,6 +1042,16 @@ class S {
     );
   }
 
+  /// `Enter name`
+  String get enter_name {
+    return Intl.message(
+      'Enter name',
+      name: 'enter_name',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Group`
   String get group {
     return Intl.message(
@@ -1070,6 +1142,16 @@ class S {
     );
   }
 
+  /// `Description`
+  String get description {
+    return Intl.message(
+      'Description',
+      name: 'description',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Pharmacy`
   String get pharmacy {
     return Intl.message(
@@ -1150,6 +1232,16 @@ class S {
     );
   }
 
+  /// `View Schedule`
+  String get view_schedule {
+    return Intl.message(
+      'View Schedule',
+      name: 'view_schedule',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `My Cart`
   String get my_cart {
     return Intl.message(
@@ -1160,11 +1252,71 @@ class S {
     );
   }
 
+  /// `Confirmed`
+  String get confirmed {
+    return Intl.message(
+      'Confirmed',
+      name: 'confirmed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Top Up`
+  String get top_up {
+    return Intl.message(
+      'Top Up',
+      name: 'top_up',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Subtotal`
   String get subtotal {
     return Intl.message(
       'Subtotal',
       name: 'subtotal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the amount you want to top up`
+  String get enter {
+    return Intl.message(
+      'Enter the amount you want to top up',
+      name: 'enter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continui {
+    return Intl.message(
+      'Continue',
+      name: 'continui',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Balance`
+  String get your_balance {
+    return Intl.message(
+      'Your Balance',
+      name: 'your_balance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Top Up E-wallet`
+  String get top_up_ewallet {
+    return Intl.message(
+      'Top Up E-wallet',
+      name: 'top_up_ewallet',
       desc: '',
       args: [],
     );
@@ -1210,6 +1362,16 @@ class S {
     );
   }
 
+  /// `Consultation`
+  String get consultation {
+    return Intl.message(
+      'Consultation',
+      name: 'consultation',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Confirm your address`
   String get confirm_address {
     return Intl.message(
@@ -1230,20 +1392,20 @@ class S {
     );
   }
 
-  /// `My Saved`
+  /// `My Saved Articles`
   String get my_saved {
     return Intl.message(
-      'My Saved',
+      'My Saved Articles',
       name: 'my_saved',
       desc: '',
       args: [],
     );
   }
 
-  /// `Appointmnet`
+  /// `Appointment`
   String get appointmnet {
     return Intl.message(
-      'Appointmnet',
+      'Appointment',
       name: 'appointmnet',
       desc: '',
       args: [],
@@ -1265,6 +1427,86 @@ class S {
     return Intl.message(
       'Logout',
       name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Read more`
+  String get read_more {
+    return Intl.message(
+      'Read more',
+      name: 'read_more',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reason`
+  String get reason {
+    return Intl.message(
+      'Reason',
+      name: 'reason',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chest pain`
+  String get chest_pain {
+    return Intl.message(
+      'Chest pain',
+      name: 'chest_pain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select the payment method you want to use`
+  String get select_the_payment_method {
+    return Intl.message(
+      'Select the payment method you want to use',
+      name: 'select_the_payment_method',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have successfully top up e-wallet for `
+  String get you_have_successfully {
+    return Intl.message(
+      'You have successfully top up e-wallet for ',
+      name: 'you_have_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Profile`
+  String get edit_profile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'edit_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `App Info`
+  String get app_info {
+    return Intl.message(
+      'App Info',
+      name: 'app_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
       desc: '',
       args: [],
     );

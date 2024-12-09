@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medics/src/common/utils/context_extension.dart';
-import 'package:medics/src/features/auth/bloc/reset_password/reset_pass_bloc.dart';
+
 import 'package:medics/src/features/auth/bloc/sign_up_verify/sign_up_verify_bloc.dart';
 import 'package:pinput/pinput.dart';
 import '../../../common/style/app_icons.dart';

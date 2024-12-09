@@ -29,8 +29,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Cardiologist": MessageLookupByLibrary.simpleMessage("Cardiologist"),
         "Category": MessageLookupByLibrary.simpleMessage("Category"),
         "Chardiologist": MessageLookupByLibrary.simpleMessage("Chardiologist"),
+        "Code": MessageLookupByLibrary.simpleMessage("Code"),
         "Confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm password"),
+        "Confirmation": MessageLookupByLibrary.simpleMessage("Confirmation"),
         "Consult_only": MessageLookupByLibrary.simpleMessage(
             "Consult only with a doctor you trust"),
         "Consultation": MessageLookupByLibrary.simpleMessage("Consultation"),
@@ -52,6 +54,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Enter_name": MessageLookupByLibrary.simpleMessage("Enter your name"),
         "Enter_password":
             MessageLookupByLibrary.simpleMessage("Enter your password"),
+        "Enter_your_code":
+            MessageLookupByLibrary.simpleMessage("Enter your code"),
         "Find_Doctors": MessageLookupByLibrary.simpleMessage("Find Doctors"),
         "Find_a_doctor": MessageLookupByLibrary.simpleMessage("Find a doctor"),
         "Find_desire_healt": MessageLookupByLibrary.simpleMessage(
@@ -85,8 +89,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "Recommended_Doctors":
             MessageLookupByLibrary.simpleMessage("Recommended Doctors"),
         "Resend": MessageLookupByLibrary.simpleMessage("Resend"),
-        "Reset_Password": MessageLookupByLibrary.simpleMessage(
-            "You have successfully reset your password."),
         "Search_articles":
             MessageLookupByLibrary.simpleMessage("Search articles, news..."),
         "Search_doctor_drugs": MessageLookupByLibrary.simpleMessage(
@@ -111,14 +113,17 @@ class MessageLookup extends MessageLookupByLibrary {
             "You can consult your problem to the doctor"),
         "You_successfully_reset": MessageLookupByLibrary.simpleMessage(
             "You have successfully reset your password."),
-        "about": MessageLookupByLibrary.simpleMessage("about"),
+        "about": MessageLookupByLibrary.simpleMessage("About"),
         "aditional_discount":
             MessageLookupByLibrary.simpleMessage("Aditional Discount"),
         "admin_fee": MessageLookupByLibrary.simpleMessage("Admin Fee"),
         "all": MessageLookupByLibrary.simpleMessage("All"),
         "ambulance": MessageLookupByLibrary.simpleMessage("Ambulance"),
-        "appointmnet": MessageLookupByLibrary.simpleMessage("Appointmnet"),
+        "app_info": MessageLookupByLibrary.simpleMessage("App Info"),
+        "appointmnet": MessageLookupByLibrary.simpleMessage("Appointment"),
         "arcticles": MessageLookupByLibrary.simpleMessage("Arcticles"),
+        "are_you_sure": MessageLookupByLibrary.simpleMessage(
+            "Are you sure to log out of your account?"),
         "back_home": MessageLookupByLibrary.simpleMessage("Back to Home"),
         "booking": MessageLookupByLibrary.simpleMessage("Booking"),
         "buy_now": MessageLookupByLibrary.simpleMessage("Buy Now"),
@@ -127,15 +132,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "change": MessageLookupByLibrary.simpleMessage("Change"),
         "chat_doctor": MessageLookupByLibrary.simpleMessage("Chat Doctor"),
         "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
+        "chest_pain": MessageLookupByLibrary.simpleMessage("Chest pain"),
         "completed": MessageLookupByLibrary.simpleMessage("Completed"),
         "confirm_address":
             MessageLookupByLibrary.simpleMessage("Confirm your address"),
         "confirm_location":
             MessageLookupByLibrary.simpleMessage("Confirm Location"),
+        "confirmed": MessageLookupByLibrary.simpleMessage("Confirmed"),
+        "consultation": MessageLookupByLibrary.simpleMessage("Consultation"),
         "consultion_start":
             MessageLookupByLibrary.simpleMessage("Consultion Start"),
+        "continui": MessageLookupByLibrary.simpleMessage("Continue"),
         "date": MessageLookupByLibrary.simpleMessage("Date"),
+        "description": MessageLookupByLibrary.simpleMessage("Description"),
         "doctor_detail": MessageLookupByLibrary.simpleMessage("Doctor Detail"),
+        "edit_profile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "emailVerification": MessageLookupByLibrary.simpleMessage(
             "Enter code that we have sent to your"),
         "emailVerification2": MessageLookupByLibrary.simpleMessage("email"),
@@ -143,17 +154,23 @@ class MessageLookup extends MessageLookupByLibrary {
             "Enter your email or your phone number, we will send you confirmation code"),
         "email_entered_wrong":
             MessageLookupByLibrary.simpleMessage("Email entered wrong"),
+        "enter": MessageLookupByLibrary.simpleMessage(
+            "Enter the amount you want to top up"),
+        "enter_name": MessageLookupByLibrary.simpleMessage("Enter name"),
         "faqs": MessageLookupByLibrary.simpleMessage("FAQs"),
         "find_specialist": MessageLookupByLibrary.simpleMessage(
             "Find a lot of specialist doctors in one place"),
         "go_home": MessageLookupByLibrary.simpleMessage("Go to home"),
+        "go_schedule": MessageLookupByLibrary.simpleMessage("Go to Schedule"),
         "group": MessageLookupByLibrary.simpleMessage("Group"),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "learn": MessageLookupByLibrary.simpleMessage("Learn more"),
         "login_enjoy": MessageLookupByLibrary.simpleMessage(
             "Login to enjoy the features we’ve provided, and stay healthy!"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "message": MessageLookupByLibrary.simpleMessage("Message"),
         "my_cart": MessageLookupByLibrary.simpleMessage("My Cart"),
-        "my_saved": MessageLookupByLibrary.simpleMessage("My Saved"),
+        "my_saved": MessageLookupByLibrary.simpleMessage("My Saved Articles"),
         "or": MessageLookupByLibrary.simpleMessage("OR"),
         "payment_detail":
             MessageLookupByLibrary.simpleMessage("Payment Detail"),
@@ -173,22 +190,29 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Product on Sale"),
         "psikeater": MessageLookupByLibrary.simpleMessage("Psikeater"),
         "read": MessageLookupByLibrary.simpleMessage("read"),
+        "read_more": MessageLookupByLibrary.simpleMessage("Read more"),
+        "reason": MessageLookupByLibrary.simpleMessage("Reason"),
         "receive_code":
             MessageLookupByLibrary.simpleMessage("Didn’t receive the code? "),
         "recent_doctors":
-            MessageLookupByLibrary.simpleMessage("Your_Recent_Doctors"),
+            MessageLookupByLibrary.simpleMessage("Your Recent Doctors"),
         "related_articles":
             MessageLookupByLibrary.simpleMessage("Related Articles"),
         "reschedule": MessageLookupByLibrary.simpleMessage("Reschedule"),
         "reset_password_button":
             MessageLookupByLibrary.simpleMessage("Reset Password"),
         "schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
+        "select_the_payment_method": MessageLookupByLibrary.simpleMessage(
+            "Select the payment method you want to use"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "subtotal": MessageLookupByLibrary.simpleMessage("Subtotal"),
         "successfully_registered": MessageLookupByLibrary.simpleMessage(
             "Your account has been successfully registered"),
         "taxes": MessageLookupByLibrary.simpleMessage("Taxes"),
+        "top_up": MessageLookupByLibrary.simpleMessage("Top Up"),
+        "top_up_ewallet":
+            MessageLookupByLibrary.simpleMessage("Top Up E-wallet"),
         "total": MessageLookupByLibrary.simpleMessage("Total"),
         "trending_Articles":
             MessageLookupByLibrary.simpleMessage("Trending Articles"),
@@ -199,7 +223,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Upload Prescription"),
         "verificationCode":
             MessageLookupByLibrary.simpleMessage("Enter Verification Code"),
+        "view_schedule": MessageLookupByLibrary.simpleMessage("View Schedule"),
         "wrong_password": MessageLookupByLibrary.simpleMessage(
-            "*The password you entered is wrong")
+            "*The password you entered is wrong"),
+        "you_confirmation": MessageLookupByLibrary.simpleMessage(
+            "Enter your email or your phone number, we will send you confirmation code"),
+        "you_have_successfully": MessageLookupByLibrary.simpleMessage(
+            "You have successfully top up e-wallet for "),
+        "your_balance": MessageLookupByLibrary.simpleMessage("Your Balance")
       };
 }

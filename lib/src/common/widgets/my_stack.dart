@@ -29,8 +29,8 @@ class MyStack extends StatelessWidget {
               ),
               boxShadow: [
                 BoxShadow(
-                  color: context.colors.onSecondary.withOpacity(0.4),
-                  offset: const Offset(12, 12),
+                  color: context.colors.onSecondary.withOpacity(0.2),
+                  offset: const Offset(0, 1),
                   blurRadius: 30,
                 ),
               ],

@@ -6,6 +6,8 @@ import 'package:medics/src/common/utils/context_extension.dart';
 import 'package:medics/src/common/widgets/my_stack.dart';
 import 'package:medics/src/features/doctor_consultation/find_doctor_screen/widgets/recommended_doctors.dart';
 
+import '../../../../common/style/app_images.dart';
+
 class FindDoctorScreen extends StatefulWidget {
   const FindDoctorScreen({super.key});
 
@@ -134,7 +136,57 @@ class _FindDoctorScreenState extends State<FindDoctorScreen> {
                   fontWeight: FontWeight.w600, color: context.colors.primary),
             ),
             const SizedBox(height: 12),
-            const RecommendedDoctors(),
+            const RecommendedDoctors(
+              title: 'Dr. Marcus Horizon',
+              job: 'Chardiologist',
+              stars: '4,7',
+              distance: '800 m',
+              image: AppImages.man,
+            ),
+            const SizedBox(height: 16),
+            Text(
+              context.lang.recent_doctors,
+              style: context.textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.w600, color: context.colors.primary),
+            ),
+            const SizedBox(height: 16),
+            SizedBox(
+              height: 90,
+              child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (BuildContext context, int index) => Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 6),
+                          child: Column(
+                            children: [
+                              const CircleAvatar(
+                                radius: 30,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(88),
+                                  ),
+                                  child: Image(
+                                    image: AssetImage(AppImages.man),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 8),
+                              Text(
+                                "Dr. Marcus",
+                                style: context.textTheme.titleSmall?.copyWith(
+                                    fontWeight: FontWeight.w500,
+                                    color: context.colors.primary),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                  separatorBuilder: (BuildContext context, int index) =>
+                      const SizedBox(
+                        width: 12,
+                      ),
+                  itemCount: 20),
+            )
           ],
         ),
       ),

@@ -1,17 +1,17 @@
-import 'package:medics/src/features/auth/data/auth_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../features/auth/data/auth_repository.dart';
 
 class AppDependency {
   AppDependency({
-    required this.sharedPreferences,
+    required this.authRepository,
+    required this.shp,
     required this.locale,
     required this.theme,
-    required this.authRepository,
   });
 
   String locale;
   bool theme;
-  final SharedPreferences sharedPreferences;
-
+  final SharedPreferences shp;
   final IAuthRepository authRepository;
 }
