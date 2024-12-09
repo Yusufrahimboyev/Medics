@@ -58,7 +58,7 @@ GoRouter router = GoRouter(
     GoRoute(
       path: AppRouter.home,
       name: AppRouter.home,
-      redirect: (context, state) => (context.dependencies.sharedPreferences.getString(Constants.token) ?? '').isEmpty ? AppRouter.logIn : AppRouter.home,
+      redirect: (context, state) => (context.dependencies.sharedPreferences.getString(Constants.token) ?? '').isEmpty ? AppRouter.onboarding : AppRouter.home,
       pageBuilder: (context, state) => CustomTransitionPage(
         key: state.pageKey,
         child: const HomeScreen(), // Your screen
@@ -263,5 +263,5 @@ GoRouter router = GoRouter(
         },
       ),
     ),
-  ],
+]
 );
