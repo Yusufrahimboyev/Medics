@@ -17,4 +17,5 @@ class Urls {
   static const String authPasswordConfirm = "/auth/password/confirm";
   static const String authPassword = "/auth/password";
   static const String resetEmailPassword = "/auth/password/resend-code";
+  static const String balance = "balance";
 }
