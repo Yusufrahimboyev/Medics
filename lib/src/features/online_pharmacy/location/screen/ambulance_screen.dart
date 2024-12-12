@@ -15,45 +15,74 @@ class AmbulanceScreen extends StatefulWidget {
 
 class _AmbulanceScreenState extends State<AmbulanceScreen> {
   final mapController = Completer<YandexMapController>();
-  final Point point=const Point(latitude: 41.341391, longitude: 69.286517);
+  final List<MapObject> mapObjects = [];
+  Point? userPoint;
 
-  void goTocurrentPosition() async {
+  Future<void> goToCurrentPosition() async {
     final controller = await mapController.future;
-    controller.moveCamera(CameraUpdate.newCameraPosition(
-        CameraPosition(target: point, zoom: 16)));
-    controller.moveCamera(CameraUpdate.zoomTo(16));
+
+    try {
+      Position position = await _getCurrentLocation();
+      userPoint = Point(
+        latitude: position.latitude,
+        longitude: position.longitude,
+      );
+
+      setState(() {
+        mapObjects.clear();
+        mapObjects.add(
+          PlacemarkMapObject(
+            mapId: const MapObjectId('user_location'),
+            point: userPoint!,
+            icon: PlacemarkIcon.single(
+              PlacemarkIconStyle(
+                image: BitmapDescriptor.fromAssetImage(
+                  'assets/images/dori.png',
+                ),
+                rotationType: RotationType.rotate,
+                scale: 1,
+                zIndex: 1,
+                anchor: const Offset(0.5, 0.5),
+              ),
+            ),
+          ),
+        );
+      });
+
+      controller.moveCamera(
+        CameraUpdate.newCameraPosition(
+          CameraPosition(target: userPoint!, zoom: 16),
+        ),
+      );
+    } catch (e) {
+      debugPrint('Error fetching location: $e');
+    }
   }
-  String? locationMessage = "Fetching location...";
 
-
-  Future<void> getLocation() async {
-    bool serviceEnabled;
-    LocationPermission permission;
-
-
-    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+  Future<Position> _getCurrentLocation() async {
+    bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
       throw Exception("Location xizmatlari o'chirilgan.");
     }
-    permission = await Geolocator.checkPermission();
+
+    LocationPermission permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
         throw Exception("Location ruxsati rad etildi.");
       }
     }
+
     if (permission == LocationPermission.deniedForever) {
       throw Exception("Location ruxsati doimiy rad etilgan.");
     }
 
-    Position position = await Geolocator.getCurrentPosition(
+    return await Geolocator.getCurrentPosition(
       locationSettings: const LocationSettings(
         accuracy: LocationAccuracy.high,
         distanceFilter: 10,
       ),
     );
-
-    print('eni: ${position.latitude}, boyi: ${position.longitude}');
   }
 
   @override
@@ -74,32 +103,13 @@ class _AmbulanceScreenState extends State<AmbulanceScreen> {
       body: YandexMap(
         onMapCreated: (YandexMapController controller) {
           mapController.complete(controller);
-          controller.moveCamera(
-            CameraUpdate.newGeometry(
-              Geometry.fromPoint(point),
-            ),
-          );
-          controller.moveCamera(
-            CameraUpdate.newCameraPosition(
-              const CameraPosition(
-                  target: Point(longitude: 41.341391, latitude: 69.286517),
-                  zoom: 16),
-            ),
-          );
-          controller.moveCamera(
-            CameraUpdate.zoomTo(16),
-          );
         },
+        mapObjects: mapObjects,
       ),
-      floatingActionButton: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          FloatingActionButton(
-            backgroundColor: context.colors.primary,
-            onPressed: goTocurrentPosition,
-            child: const Icon(CupertinoIcons.location),
-          ),
-        ],
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: context.colors.primary,
+        onPressed: goToCurrentPosition,
+        child: const Icon(CupertinoIcons.location),
       ),
     );
   }

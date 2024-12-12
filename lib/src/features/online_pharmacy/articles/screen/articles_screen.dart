@@ -14,12 +14,6 @@ class ArticlesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 24),
-            child: SvgPicture.asset(AppIcons.menyu),
-          ),
-        ],
         backgroundColor: context.colors.onPrimary,
         scrolledUnderElevation: 0,
         centerTitle: true,
@@ -71,34 +65,19 @@ class ArticlesScreen extends StatelessWidget {
             Expanded(
               child: ListView(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        context.lang.Health_article,
-                        style: context.textTheme.titleMedium?.copyWith(
-                            color: context.colors.primary,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      TextButton(
-                        style: const ButtonStyle(
-                          overlayColor: WidgetStateColor.transparent,
-                        ),
-                        onPressed: () {},
-                        child: Text(
-                          context.lang.See_all,
-                          style: context.textTheme.titleSmall?.copyWith(
-                              color: context.colors.onPrimaryContainer,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ),
-                    ],
+                  Text(
+                    context.lang.Health_article,
+                    style: context.textTheme.titleMedium?.copyWith(
+                        color: context.colors.primary,
+                        fontWeight: FontWeight.w600),
                   ),
+                  const SizedBox(height: 10),
                   SizedBox(
                     height: 220,
                     child: ListView.separated(
                         scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) => const TrendingArticlesList(
+                        itemBuilder: (context, index) =>
+                            const TrendingArticlesList(
                               title: 'Covid-19',
                               subtitle:
                                   'Comparing the AstraZeneca and Sinovac COVID-19 Vaccines',
@@ -111,36 +90,22 @@ class ArticlesScreen extends StatelessWidget {
                             ),
                         itemCount: 10),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        context.lang.related_articles,
-                        style: context.textTheme.titleMedium?.copyWith(
-                            color: context.colors.primary,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      TextButton(
-                        style: const ButtonStyle(
-                          overlayColor: WidgetStateColor.transparent,
-                        ),
-                        onPressed: () {},
-                        child: Text(
-                          context.lang.See_all,
-                          style: context.textTheme.titleSmall?.copyWith(
-                              color: context.colors.onPrimaryContainer,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ),
-                    ],
+                  const SizedBox(height: 10),
+                  Text(
+                    context.lang.related_articles,
+                    style: context.textTheme.titleMedium?.copyWith(
+                        color: context.colors.primary,
+                        fontWeight: FontWeight.w600),
                   ),
-                  for(int i=0;i<10;i++)
+                  const SizedBox(height: 10),
+                  for (int i = 0; i < 10; i++)
                     const ArticleList(
                       image: AppImages.pills,
                       title:
-                      "The 25 Healthiest Fruits You Can Eat, According to a Nutritionist whiwuhef9uwhefowei ekfinhiouweb",
+                          "The 25 Healthiest Fruits You Can Eat, According to a Nutritionist whiwuhef9uwhefowei ekfinhiouweb",
                       readTime: "5min read",
                       datetime: "Jun 10, 2021 ",
+                      isSaved: false,
                     ),
                 ],
               ),

@@ -267,7 +267,7 @@ GoRouter router = GoRouter(
       pageBuilder: (context, state) => CustomTransitionPage(
         child: const PharmacyScreen(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(0.5, 0.0);
+          const begin = Offset(1.0, 1.0);
           const end = Offset.zero;
           final tween = Tween(begin: begin, end: end);
           final offsetAnimation = animation.drive(tween);
@@ -288,7 +288,7 @@ GoRouter router = GoRouter(
         key: state.pageKey,
         child: const OnboardingScreen(), // Your screen
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(0.5, 0.0);
+          const begin = Offset(1.0, 1.0);
           const end = Offset.zero;
           final tween = Tween(begin: begin, end: end);
           final offsetAnimation = animation.drive(tween);
@@ -309,7 +309,7 @@ GoRouter router = GoRouter(
         key: state.pageKey,
         child: const OnboardingScreen4(), // Your screen
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(0.5, 0.0);
+          const begin = Offset(1.0, 1.0);
           const end = Offset.zero;
           final tween = Tween(begin: begin, end: end);
           final offsetAnimation = animation.drive(tween);
@@ -333,7 +333,7 @@ GoRouter router = GoRouter(
           child: const LoginScreen(),
         ),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(0.5, 0.0);
+          const begin = Offset(1.0, 1.0);
           const end = Offset.zero;
           final tween = Tween(begin: begin, end: end);
           final offsetAnimation = animation.drive(tween);
@@ -357,7 +357,7 @@ GoRouter router = GoRouter(
           child: const SignUpScreen(),
         ),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(0.5, 0.0);
+          const begin = Offset(1.0, 1.0);
           const end = Offset.zero;
           final tween = Tween(begin: begin, end: end);
           final offsetAnimation = animation.drive(tween);
@@ -381,7 +381,7 @@ GoRouter router = GoRouter(
           child: const NewPasswordScreen(),
         ), // Your screen
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(0.5, 0.0);
+          const begin = Offset(1.0, 1.0);
           const end = Offset.zero;
           final tween = Tween(begin: begin, end: end);
           final offsetAnimation = animation.drive(tween);
@@ -405,7 +405,7 @@ GoRouter router = GoRouter(
           child: const ResetPasswordScreen(),
         ),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(0.5, 0.0);
+          const begin = Offset(1.0, 1.0);
           const end = Offset.zero;
           final tween = Tween(begin: begin, end: end);
           final offsetAnimation = animation.drive(tween);
@@ -429,7 +429,7 @@ GoRouter router = GoRouter(
           child: VerificationCodeScreen(email: state.extra as String),
         ),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(0.5, 0.0);
+          const begin = Offset(1.0, 1.0);
           const end = Offset.zero;
           final tween = Tween(begin: begin, end: end);
           final offsetAnimation = animation.drive(tween);
@@ -453,7 +453,7 @@ GoRouter router = GoRouter(
           child: SignUpVerifyScreen(email: state.extra as String),
         ),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(0.5, 0.0);
+          const begin = Offset(1.0, 1.0);
           const end = Offset.zero;
           final tween = Tween(begin: begin, end: end);
           final offsetAnimation = animation.drive(tween);
@@ -473,7 +473,7 @@ GoRouter router = GoRouter(
       pageBuilder: (context, state) => CustomTransitionPage(
         child: const DrugsDetailScreen(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(0.5, 0.0);
+          const begin = Offset(1.0, 1.0);
           const end = Offset.zero;
           final tween = Tween(begin: begin, end: end);
           final offsetAnimation = animation.drive(tween);
@@ -518,7 +518,7 @@ GoRouter router = GoRouter(
             child: const MainScreen(),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
-              const begin = Offset(0.5, 0.0);
+              const begin = Offset(1.0, 1.0);
               const end = Offset.zero;
               final tween = Tween(begin: begin, end: end);
               final offsetAnimation = animation.drive(tween);

@@ -1,20 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import 'package:medics/src/common/style/app_icons.dart';
 import 'package:medics/src/common/utils/context_extension.dart';
 
-class ArticleList extends StatelessWidget {
+class ArticleList extends StatefulWidget {
   final String image;
   final String title;
   final String readTime;
   final String datetime;
-
+  final bool isSaved;
 
   const ArticleList(
       {super.key,
       required this.image,
       required this.title,
       required this.readTime,
-      required this.datetime});
+      required this.datetime,
+      required this.isSaved});
+
+  @override
+  State<ArticleList> createState() => _ArticleListState();
+}
+
+class _ArticleListState extends State<ArticleList> {
+  late bool isSaved;
+
+  @override
+  void initState() {
+    super.initState();
+    isSaved = widget.isSaved;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +68,7 @@ class ArticleList extends StatelessWidget {
                       Radius.circular(8),
                     ),
                     child: Image(
-                      image: AssetImage(image),
+                      image: AssetImage(widget.image),
                     ),
                   ),
                 ),
@@ -64,7 +80,7 @@ class ArticleList extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(right: 12),
                         child: Text(
-                          title,
+                          widget.title,
                           maxLines: 2,
                           style: context.textTheme.titleSmall?.copyWith(
                             overflow: TextOverflow.ellipsis,
@@ -76,7 +92,7 @@ class ArticleList extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            datetime,
+                            widget.datetime,
                             style: context.textTheme.labelMedium?.copyWith(
                                 color: context.colors.onSecondary,
                                 fontWeight: FontWeight.w500),
@@ -89,7 +105,7 @@ class ArticleList extends StatelessWidget {
                             width: 4,
                           ),
                           Text(
-                            readTime,
+                            widget.readTime,
                             style: context.textTheme.labelLarge?.copyWith(
                                 color: context.colors.onPrimaryContainer,
                                 fontWeight: FontWeight.w500),
@@ -99,10 +115,29 @@ class ArticleList extends StatelessWidget {
                     ],
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(right: 12),
-                  child: FaIcon(FontAwesomeIcons.bookmark,size: 16,),
-                ),
+                IconButton(
+                  style: const ButtonStyle(
+                    overlayColor: WidgetStateColor.transparent,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      isSaved = !isSaved;
+                    });
+                  },
+                  icon: isSaved
+                      ? SvgPicture.asset(
+                          AppIcons.saved,
+                          colorFilter: ColorFilter.mode(
+                              context.colors.primary, BlendMode.srcATop),
+                          width: 18,
+                        )
+                      : SvgPicture.asset(
+                          AppIcons.notsaved,
+                          colorFilter: ColorFilter.mode(
+                              context.colors.primary, BlendMode.srcATop),
+                          width: 18,
+                        ),
+                )
               ],
             ),
           ),

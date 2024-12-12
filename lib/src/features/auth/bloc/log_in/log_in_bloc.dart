@@ -4,15 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medics/src/common/utils/context_extension.dart';
-import 'package:medics/src/features/auth/screen/login_screen.dart';
 import '../../../../common/constants/constants.dart';
 import '../../../../common/router/app_router.dart';
 import '../../../../common/utils/status_enum.dart';
+
+import '../../widgets/login_dialog.dart';
+
 part 'log_in_state.dart';
+
 part 'log_in_event.dart';
 
 class LogInBloc extends Bloc<LogInEvent, LogInState> {
-  LogInBloc() : super( const LogInState()) {
+  LogInBloc() : super(const LogInState()) {
     on<LogInEvent>(
       (event, emit) => switch (event) {
         LogIn$LogInEvent _ => _logIn(event, emit),
@@ -21,22 +24,26 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
   }
 
   Future<void> _logIn(
-      LogIn$LogInEvent event, Emitter<LogInState> emit) async {
+    LogIn$LogInEvent event,
+    Emitter<LogInState> emit,
+  ) async {
     emit(state.copyWith(status: Status.loading));
     try {
-      final result =
-          await event.context.dependencies.authRepository.logIn(
+      final result = await event.context.dependencies.authRepository.logIn(
         email: event.email,
         password: event.password,
       );
       if ((result["success"] as bool?) != null &&
           result["success"] as bool &&
           event.context.mounted) {
-        await event.context.dependencies.shp.setString(Constants.token, result["data"] as String);
+        await event.context.dependencies.shp
+            .setString(Constants.token, result["data"] as String);
         await event.context.dependencies.shp
             .setString(Constants.userEmail, event.email);
-        print(event.context.dependencies.shp.getString(Constants.token));
-        if(event.context.mounted){
+        print(
+          event.context.dependencies.shp.getString(Constants.token),
+        );
+        if (event.context.mounted) {
           showDialog(
             context: event.context,
             builder: (context) => SuccessWidget(

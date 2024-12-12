@@ -5,7 +5,6 @@ import 'package:medics/src/common/style/app_icons.dart';
 import 'package:medics/src/common/utils/context_extension.dart';
 import 'package:medics/src/common/widgets/my_stack.dart';
 import 'package:medics/src/features/doctor_consultation/find_doctor_screen/widgets/recommended_doctors.dart';
-
 import '../../../../common/style/app_images.dart';
 
 class FindDoctorScreen extends StatefulWidget {
@@ -153,39 +152,38 @@ class _FindDoctorScreenState extends State<FindDoctorScreen> {
             SizedBox(
               height: 90,
               child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (BuildContext context, int index) => Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 6),
-                          child: Column(
-                            children: [
-                              const CircleAvatar(
-                                radius: 30,
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(88),
-                                  ),
-                                  child: Image(
-                                    image: AssetImage(AppImages.man),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(height: 8),
-                              Text(
-                                "Dr. Marcus",
-                                style: context.textTheme.titleSmall?.copyWith(
-                                    fontWeight: FontWeight.w500,
-                                    color: context.colors.primary),
-                              ),
-                            ],
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (BuildContext context, int index) => Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 6),
+                  child: Column(
+                    children: [
+                      const CircleAvatar(
+                        radius: 30,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(88),
+                          ),
+                          child: Image(
+                            image: AssetImage(AppImages.man),
                           ),
                         ),
                       ),
-                  separatorBuilder: (BuildContext context, int index) =>
-                      const SizedBox(
-                        width: 12,
+                      const SizedBox(height: 8),
+                      Text(
+                        "Dr. Marcus",
+                        style: context.textTheme.titleSmall?.copyWith(
+                            fontWeight: FontWeight.w500,
+                            color: context.colors.primary),
                       ),
-                  itemCount: 20),
+                    ],
+                  ),
+                ),
+                separatorBuilder: (BuildContext context, int index) =>
+                    const SizedBox(
+                  width: 12,
+                ),
+                itemCount: 20,
+              ),
             )
           ],
         ),

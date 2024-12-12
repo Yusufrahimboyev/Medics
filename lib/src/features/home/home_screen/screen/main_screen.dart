@@ -190,6 +190,7 @@ class _MainScreenState extends State<MainScreen> {
                       'The 25 Healthiest Fruits You Can Eat, According to a Nutritionist',
                   readTime: '5 min read',
                   datetime: 'Jun 10, 2021 ',
+                  isSaved: false,
                 ),
               ),
           ],

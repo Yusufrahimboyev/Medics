@@ -37,8 +37,7 @@ class _OnboardingScreen4State extends State<OnboardingScreen4> {
           Text(
             context.lang.Let_started,
             style: context.textTheme.headlineSmall?.copyWith(
-                fontWeight: FontWeight.w700,
-                color: context.colors.primary),
+                fontWeight: FontWeight.w700, color: context.colors.primary),
             textAlign: TextAlign.center,
           ),
           const SizedBox(
@@ -64,8 +63,8 @@ class _OnboardingScreen4State extends State<OnboardingScreen4> {
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: context.colors.onPrimaryContainer,
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 110, vertical: 15),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 110, vertical: 15),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30),
               ),
@@ -82,8 +81,8 @@ class _OnboardingScreen4State extends State<OnboardingScreen4> {
               context.push(AppRouter.signUp);
             },
             style: OutlinedButton.styleFrom(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 100, vertical: 15),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30),
               ),

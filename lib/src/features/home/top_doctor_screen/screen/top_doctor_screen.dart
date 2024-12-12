@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:medics/src/common/style/app_icons.dart';
 import 'package:medics/src/common/utils/context_extension.dart';
 import 'package:medics/src/common/widgets/my_card.dart';
 

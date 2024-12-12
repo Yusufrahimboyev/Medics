@@ -3,6 +3,8 @@ class AppIcons {
 
   static const String ambulance = "assets/icons/ambulance.svg";
   static const String doctor1 = "assets/images/doctor1.png";
+  static const String notBookmark = "assets/icons/notselected.svg";
+  static const String selectedBookmark = "assets/icons/selected_bookmark.svg";
   static const String doctor2 = "assets/images/doctor2.png";
   static const String doctor3 = "assets/images/doctor3.png";
   static const String apple = "assets/icons/Apple.svg";
