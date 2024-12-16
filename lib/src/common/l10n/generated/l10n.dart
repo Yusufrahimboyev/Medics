@@ -1272,6 +1272,26 @@ class S {
     );
   }
 
+  /// `Name`
+  String get name {
+    return Intl.message(
+      'Name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Surname`
+  String get surname {
+    return Intl.message(
+      'Surname',
+      name: 'surname',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Subtotal`
   String get subtotal {
     return Intl.message(
@@ -1422,10 +1442,20 @@ class S {
     );
   }
 
-  /// `Logout`
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log  out`
   String get logout {
     return Intl.message(
-      'Logout',
+      'Log  out',
       name: 'logout',
       desc: '',
       args: [],
@@ -1517,6 +1547,26 @@ class S {
     return Intl.message(
       'Email entered wrong',
       name: 'email_entered_wrong',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phone {
+    return Intl.message(
+      'Phone Number',
+      name: 'phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
       desc: '',
       args: [],
     );

@@ -7,12 +7,15 @@ class Constants {
   static const String token5 = "token5";
   static const String userEmail = "userEmail";
   static const String balance = "balance";
+  static const String userName = "userName";
+  static const String userImage = "userImage";
 
 }
 
 class Urls {
   const Urls._();
   static const String authSignUp = "/auth/sign-up";
+  static const String userInfo = "/user/profile";
   static const String authLogIn = "/auth/sign-in";
   static const String authAccountConfirm = "/auth/account/confirm";
   static const String authPasswordConfirm = "/auth/password/confirm";

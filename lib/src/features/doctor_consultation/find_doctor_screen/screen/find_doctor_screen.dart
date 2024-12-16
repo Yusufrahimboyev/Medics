@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:medics/src/common/style/app_icons.dart';
 import 'package:medics/src/common/utils/context_extension.dart';
-import 'package:medics/src/common/widgets/my_stack.dart';
 import 'package:medics/src/features/doctor_consultation/find_doctor_screen/widgets/recommended_doctors.dart';
 import '../../../../common/style/app_images.dart';
 
@@ -65,70 +64,8 @@ class _FindDoctorScreenState extends State<FindDoctorScreen> {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 30,
-            ),
-            Text(
-              context.lang.Category,
-              style: context.textTheme.titleMedium?.copyWith(
-                  color: context.colors.primary, fontWeight: FontWeight.w600),
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: MyStack(
-                      function: () {},
-                      text: context.lang.General,
-                      icons: AppIcons.doctor),
-                ),
-                Expanded(
-                  child: MyStack(
-                      function: () {},
-                      text: context.lang.Lungs_Specialist,
-                      icons: AppIcons.lungs),
-                ),
-                Expanded(
-                  child: MyStack(
-                      function: () {},
-                      text: context.lang.Dentist,
-                      icons: AppIcons.tooth),
-                ),
-                Expanded(
-                  child: MyStack(
-                      function: () {},
-                      text: context.lang.Psychiatrist,
-                      icons: AppIcons.buble),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            Row(
-              children: [
-                MyStack(
-                    function: () {},
-                    text: context.lang.Covid_19,
-                    icons: AppIcons.virus),
-                const SizedBox(
-                  width: 24,
-                ),
-                MyStack(
-                    function: () {},
-                    text: context.lang.Surgeon,
-                    icons: AppIcons.shprist),
-                const SizedBox(width: 17),
-                MyStack(
-                    function: () {},
-                    text: context.lang.Cardiologist,
-                    icons: AppIcons.cardiologist),
-              ],
-            ),
-            const SizedBox(height: 26),
+            const SizedBox(height: 20),
+
             Text(
               context.lang.Recommended_Doctors,
               style: context.textTheme.titleMedium?.copyWith(

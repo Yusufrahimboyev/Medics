@@ -147,6 +147,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "doctor_detail": MessageLookupByLibrary.simpleMessage("Doctor Detail"),
         "edit_profile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
         "emailVerification": MessageLookupByLibrary.simpleMessage(
             "Enter code that we have sent to your"),
         "emailVerification2": MessageLookupByLibrary.simpleMessage("email"),
@@ -167,10 +168,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "learn": MessageLookupByLibrary.simpleMessage("Learn more"),
         "login_enjoy": MessageLookupByLibrary.simpleMessage(
             "Login to enjoy the features we’ve provided, and stay healthy!"),
-        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "logout": MessageLookupByLibrary.simpleMessage("Log  out"),
         "message": MessageLookupByLibrary.simpleMessage("Message"),
         "my_cart": MessageLookupByLibrary.simpleMessage("My Cart"),
         "my_saved": MessageLookupByLibrary.simpleMessage("My Saved Articles"),
+        "name": MessageLookupByLibrary.simpleMessage("Name"),
         "or": MessageLookupByLibrary.simpleMessage("OR"),
         "payment_detail":
             MessageLookupByLibrary.simpleMessage("Payment Detail"),
@@ -181,6 +183,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "payment_successful": MessageLookupByLibrary.simpleMessage(
             "Your payment has been successful, you can have a consultation session with your trusted doctor"),
         "pharmacy": MessageLookupByLibrary.simpleMessage("Pharmacy"),
+        "phone": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "popular_articles":
             MessageLookupByLibrary.simpleMessage("Popular Articles"),
         "popular_product":
@@ -201,6 +204,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "reschedule": MessageLookupByLibrary.simpleMessage("Reschedule"),
         "reset_password_button":
             MessageLookupByLibrary.simpleMessage("Reset Password"),
+        "save": MessageLookupByLibrary.simpleMessage("Save"),
         "schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
         "select_the_payment_method": MessageLookupByLibrary.simpleMessage(
             "Select the payment method you want to use"),
@@ -209,6 +213,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "subtotal": MessageLookupByLibrary.simpleMessage("Subtotal"),
         "successfully_registered": MessageLookupByLibrary.simpleMessage(
             "Your account has been successfully registered"),
+        "surname": MessageLookupByLibrary.simpleMessage("Surname"),
         "taxes": MessageLookupByLibrary.simpleMessage("Taxes"),
         "top_up": MessageLookupByLibrary.simpleMessage("Top Up"),
         "top_up_ewallet":

@@ -5,11 +5,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medics/src/common/constants/constants.dart';
 import 'package:medics/src/common/utils/context_extension.dart';
-import 'package:medics/src/features/auth/screen/login_screen.dart';
+
 
 import '../../../../common/router/app_router.dart';
 import '../../../../common/utils/status_enum.dart';
-import '../../screen/new_password_screen.dart';
+
 import '../../widgets/login_dialog.dart';
 
 part 'new_password_state.dart';

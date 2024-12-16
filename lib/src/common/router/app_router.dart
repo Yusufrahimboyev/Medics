@@ -16,6 +16,12 @@ import 'package:medics/src/features/online_pharmacy/pharmacy/screen/pharmacy_scr
 import 'package:medics/src/features/payment_method/screen/payment_screen.dart';
 import 'package:medics/src/features/payment_method/top_up/top_up_screen.dart';
 import 'package:medics/src/features/payment_method/second_top_up/screen/top_up_second_screen.dart';
+import 'package:medics/src/features/profil/screen/app_info/app_info.dart';
+import 'package:medics/src/features/profil/screen/appointment_history/appointment_history_screen.dart';
+import 'package:medics/src/features/profil/screen/change_language/change_language.dart';
+import 'package:medics/src/features/profil/screen/edit_profile/edit_profile.dart';
+import 'package:medics/src/features/profil/screen/faqs/faqs_screen.dart';
+import 'package:medics/src/features/profil/screen/my_saved_screen/my_saved_screen.dart';
 import 'package:medics/src/features/profil/screen/profile_screen/profile_screen.dart';
 import '../../features/home/home_screen/screen/home_screen.dart';
 import '../../features/payment_method/bloc/payment_bloc.dart';
@@ -66,6 +72,12 @@ class AppRouter {
   static const String wallet = "/wallet";
   static const String topUp1 = "/topUp1";
   static const String topUp2 = "/topUp2";
+  static const String editProfile = "/editProfile";
+  static const String changeLang = "/changeLang";
+  static const String appInfo = "/appInfo";
+  static const String mySaved = "/mySaved";
+  static const String faqs = "/faqs";
+  static const String appointment = "/appointment";
 
   //Abdumannon
   static const String profile = "/profile";
@@ -575,6 +587,126 @@ GoRouter router = GoRouter(
           ),
         ),
       ],
+    ),
+    GoRoute(
+      path: AppRouter.changeLang,
+      name: AppRouter.changeLang,
+      pageBuilder: (context, state) => CustomTransitionPage(
+        child: const ChangeLanguage(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1.0, 1.0);
+          const end = Offset.zero;
+          final tween = Tween(begin: begin, end: end);
+          final offsetAnimation = animation.drive(tween);
+          return SlideTransition(
+            position: offsetAnimation,
+            child: FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+          );
+        },
+      ),
+    ),
+    GoRoute(
+      path: AppRouter.editProfile,
+      name: AppRouter.editProfile,
+      pageBuilder: (context, state) => CustomTransitionPage(
+        child: const EditProfile(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1.0, 1.0);
+          const end = Offset.zero;
+          final tween = Tween(begin: begin, end: end);
+          final offsetAnimation = animation.drive(tween);
+          return SlideTransition(
+            position: offsetAnimation,
+            child: FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+          );
+        },
+      ),
+    ),
+    GoRoute(
+      path: AppRouter.appInfo,
+      name: AppRouter.appInfo,
+      pageBuilder: (context, state) => CustomTransitionPage(
+        child: const AppInfo(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1.0, 1.0);
+          const end = Offset.zero;
+          final tween = Tween(begin: begin, end: end);
+          final offsetAnimation = animation.drive(tween);
+          return SlideTransition(
+            position: offsetAnimation,
+            child: FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+          );
+        },
+      ),
+    ),
+    GoRoute(
+      path: AppRouter.mySaved,
+      name: AppRouter.mySaved,
+      pageBuilder: (context, state) => CustomTransitionPage(
+        child: const MySavedScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1.0, 1.0);
+          const end = Offset.zero;
+          final tween = Tween(begin: begin, end: end);
+          final offsetAnimation = animation.drive(tween);
+          return SlideTransition(
+            position: offsetAnimation,
+            child: FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+          );
+        },
+      ),
+    ),
+    GoRoute(
+      path: AppRouter.faqs,
+      name: AppRouter.faqs,
+      pageBuilder: (context, state) => CustomTransitionPage(
+        child: const FaqsScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1.0, 1.0);
+          const end = Offset.zero;
+          final tween = Tween(begin: begin, end: end);
+          final offsetAnimation = animation.drive(tween);
+          return SlideTransition(
+            position: offsetAnimation,
+            child: FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+          );
+        },
+      ),
+    ),
+    GoRoute(
+      path: AppRouter.appointment,
+      name: AppRouter.appointment,
+      pageBuilder: (context, state) => CustomTransitionPage(
+        child: const AppointmentHistoryScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1.0, 1.0);
+          const end = Offset.zero;
+          final tween = Tween(begin: begin, end: end);
+          final offsetAnimation = animation.drive(tween);
+          return SlideTransition(
+            position: offsetAnimation,
+            child: FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+          );
+        },
+      ),
     ),
   ],
 );

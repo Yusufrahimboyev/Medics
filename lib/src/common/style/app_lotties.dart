@@ -1,4 +1,5 @@
 class AppLotties
 {
-  const AppLotties._();
+  AppLotties._();
+  static const String empty="assets/lotties/empty.json";
 }

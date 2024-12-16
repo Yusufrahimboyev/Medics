@@ -123,6 +123,8 @@
   "my_cart": "My Cart",
   "confirmed": "Confirmed",
   "top_up": "Top Up",
+  "name": "Name",
+  "surname": "Surname",
   "subtotal": "Subtotal",
   "enter": "Enter the amount you want to top up",
   "continui": "Continue",
@@ -138,7 +140,8 @@
   "my_saved": "My Saved Articles",
   "appointmnet": "Appointment",
   "faqs": "FAQs",
-  "logout": "Log out",
+  "save": "Save",
+  "logout": "Log  out",
   "read_more": "Read more",
   "reason": "Reason",
   "chest_pain": "Chest pain",
@@ -147,6 +150,8 @@
   "edit_profile": "Edit Profile",
   "app_info": "App Info",
   "language": "Language",
-  "logout": "Logout",
-  "email_entered_wrong": "Email entered wrong"
+  "email_entered_wrong": "Email entered wrong",
+  "phone": "Phone Number",
+  "email": "Email"
+
 }

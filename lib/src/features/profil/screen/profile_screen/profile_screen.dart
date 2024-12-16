@@ -21,15 +21,22 @@ class ProfileScreen extends StatelessWidget {
             return [
               PopupMenuItem(
                 child: Text(context.lang.edit_profile),
-                onTap: () {},
+                onTap: () {
+
+                  context.push(AppRouter.editProfile);
+                },
               ),
               PopupMenuItem(
                 child: Text(context.lang.language),
-                onTap: () {},
+                onTap: () {
+                  context.push(AppRouter.changeLang);
+                },
               ),
               PopupMenuItem(
                 child: Text(context.lang.app_info),
-                onTap: () {},
+                onTap: () {
+                  context.push(AppRouter.appInfo);
+                },
               ),
             ];
           }),
@@ -81,7 +88,9 @@ class ProfileScreen extends StatelessWidget {
                     ProfileList(
                       icon: AppIcons.notsaved,
                       title: context.lang.my_saved,
-                      function: () {},
+                      function: () {
+                        context.push(AppRouter.mySaved);
+                      },
                     ),
                     Divider(
                       color: context.colors.tertiary,
@@ -89,7 +98,9 @@ class ProfileScreen extends StatelessWidget {
                     ProfileList(
                       icon: AppIcons.document,
                       title: context.lang.appointmnet,
-                      function: () {},
+                      function: () {
+                        context.push(AppRouter.appointment);
+                      },
                     ),
                     Divider(
                       color: context.colors.tertiary,
@@ -107,7 +118,9 @@ class ProfileScreen extends StatelessWidget {
                     ProfileList(
                       icon: AppIcons.faq,
                       title: context.lang.faqs,
-                      function: () {},
+                      function: () {
+                        context.push(AppRouter.faqs);
+                      },
                     ),
                     Divider(
                       color: context.colors.tertiary,

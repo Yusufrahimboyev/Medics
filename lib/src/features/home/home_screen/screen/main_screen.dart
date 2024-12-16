@@ -42,12 +42,16 @@ class _MainScreenState extends State<MainScreen> {
                           ),
                         ),
                         const Spacer(),
-                        SvgPicture.asset(
-                          AppIcons.notification,
-                          width: 28,
-                          height: 28,
-                          colorFilter: ColorFilter.mode(
-                              context.colors.primary, BlendMode.srcATop),
+                        InkWell(
+                          onTap: () {},
+                          overlayColor: WidgetStateColor.transparent,
+                          child: SvgPicture.asset(
+                            AppIcons.notification,
+                            width: 28,
+                            height: 28,
+                            colorFilter: ColorFilter.mode(
+                                context.colors.primary, BlendMode.srcATop),
+                          ),
                         ),
                       ],
                     ),
@@ -108,12 +112,7 @@ class _MainScreenState extends State<MainScreen> {
                           },
                           text: context.lang.pharmacy,
                           icons: AppIcons.pill),
-                      MyStack(
-                          function: () {
-                            context.push(AppRouter.ambulance);
-                          },
-                          text: context.lang.Ambulance,
-                          icons: AppIcons.ambulance),
+
                     ],
                   ),
                 ],

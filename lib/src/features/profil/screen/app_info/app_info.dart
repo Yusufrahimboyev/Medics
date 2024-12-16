@@ -1,10 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:medics/src/common/utils/context_extension.dart';
 
-class MySavedScreen extends StatelessWidget {
-  const MySavedScreen({super.key});
+import '../../../../common/style/app_lotties.dart';
 
+class AppInfo extends StatefulWidget {
+  const AppInfo({super.key});
+
+  @override
+  State<AppInfo> createState() => _AppInfoState();
+}
+
+class _AppInfoState extends State<AppInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,13 +21,22 @@ class MySavedScreen extends StatelessWidget {
         backgroundColor: context.colors.onPrimary,
         scrolledUnderElevation: 0,
         leading: const CupertinoNavigationBarBackButton(),
-        centerTitle:   true,
+        centerTitle: true,
         title: Text(
-          context.lang.my_saved,
+          context.lang.app_info,
           style: context.textTheme.titleLarge
               ?.copyWith(fontWeight: FontWeight.w600),
         ),
       ),
+      body: Center(
+          child: Column(
+        children: [
+          const SizedBox(
+            height: 100,
+          ),
+          Lottie.asset(AppLotties.empty)
+        ],
+      )),
     );
   }
 }

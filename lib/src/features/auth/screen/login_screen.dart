@@ -196,7 +196,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         InkWell(
                           overlayColor: WidgetStateColor.transparent,
                           onTap: () {
-                            context.go(AppRouter.resetEp);
+                            context.push(AppRouter.resetEp);
                           },
                           child: Text(context.lang.Forgot_Password,
                               style: context.textTheme.bodyMedium?.copyWith(
@@ -260,51 +260,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 25),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                      child: Row(
-                        children: [
-                          const Expanded(child: Divider()),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: Text(
-                              context.lang.or,
-                              style: context.textTheme.bodySmall?.copyWith(
-                                  fontWeight: FontWeight.w400,
-                                  color: context.colors.primary),
-                            ),
-                          ),
-                          const Expanded(child: Divider()),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 25),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: ElevatedButton.icon(
-                        onPressed: () {},
-                        icon: SvgPicture.asset(AppIcons.google),
-                        label: Text(
-                          context.lang.Sign_Google,
-                          style: context.textTheme.bodyLarge?.copyWith(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black,
-                          ),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          fixedSize: const Size(350, 60),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                            side: BorderSide(
-                                color: context.colors.onTertiary, width: 2),
-                          ),
-                          backgroundColor: Colors.white,
-                          shadowColor: Colors.transparent,
-                        ),
-                      ),
-                    ),
+
+
+
 
                   ],
                 ),
