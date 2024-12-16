@@ -248,6 +248,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         GestureDetector(
                           onTap: () {
+                            print("1");
                             context.push(AppRouter.signUp);
                           },
                           child: Text(
