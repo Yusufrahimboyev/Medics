@@ -66,6 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
           scrolledUnderElevation: 0,
           leading: IconButton(
             onPressed: () {
+              print("1234");
               context.pop();
             },
             icon: SvgPicture.asset(AppIcons.backButton),
