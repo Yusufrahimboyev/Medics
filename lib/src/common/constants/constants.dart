@@ -29,6 +29,7 @@ class Urls {
   static const String putUserAppointment = "/user/{id}/appointment";
   static const String postUserPayment = "/user/payment";
   static const String getUserPayment = "/user/payment";
+  static const String getArticles = "/article/top";
 
 
 

@@ -1,4 +1,7 @@
-// The abstract interface class
+import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+import 'package:medics/src/common/utils/context_extension.dart';
+
 import '../../../../common/constants/constants.dart';
 import '../../../../common/model/medics_model.dart';
 import '../../../../common/service/api_service.dart';
@@ -6,19 +9,9 @@ import '../../../../common/service/api_service.dart';
 abstract interface class IMainRepository {
   const IMainRepository();
 
-  Future<DoctorModel> getDoctorById(int id);
+  Future<List<DoctorModel>> getDoctor({required BuildContext context});
 
-  Future<Map<String, Object?>> getDoctor({
-    required String firstName,
-    required String lastName,
-    required String speciality,
-    required double price,
-    required double rating,
-    required double latitude,
-    required double longitude,
-    required String imageUrl,
-    required String about,
-  });
+  Future<List<ArticleModel>> getArticles({required BuildContext context});
 }
 
 class MainRepositoryImpl implements IMainRepository {
@@ -27,45 +20,43 @@ class MainRepositoryImpl implements IMainRepository {
   MainRepositoryImpl({required this.apiService});
 
   @override
-  Future<DoctorModel> getDoctorById(int id) async {
-    final response = await apiService.request(
-      Urls.getDoctorById,
-      method: Method.get,
-      queryParams: {'id': id},
-    );
-
-    return DoctorModel.fromJson(response);
-  }
-
-  @override
-  Future<Map<String, Object?>> getDoctor({
-    required String firstName,
-    required String lastName,
-    required String speciality,
-    required double price,
-    required double rating,
-    required double latitude,
-    required double longitude,
-    required String imageUrl,
-    required String about,
-  }) async {
+  Future<List<DoctorModel>> getDoctor({required BuildContext context}) async {
     final response = await apiService.request(
       Urls.getDoctors,
-      method: Method.get,
-      data: {
-        'firstName': firstName,
-        'lastName': lastName,
-        'speciality': speciality,
-        'price': price,
-        'rating': rating,
-        'latitude': latitude,
-        'longitude': longitude,
-        'imageUrl': imageUrl,
-        'about': about,
+      headers: {
+        'Authorization':
+            'Bearer ${context.dependencies.shp.get(Constants.token)}',
+      },
+      queryParams: {
+        "page": 0,
+        "size": 10,
       },
     );
 
-    return response;
+    return List<Map<String, Object?>>.from(response['data'] as List)
+        .whereType<Map<String, Object?>>()
+        .map(DoctorModel.fromJson)
+        .toList();
   }
 
+  @override
+  Future<List<ArticleModel>> getArticles(
+      {required BuildContext context}) async {
+    final response = await apiService.request(
+      Urls.getArticles,
+      headers: {
+        'Authorization':
+            'Bearer ${context.dependencies.shp.get(Constants.token)}',
+      },
+      queryParams: {
+        "page": 0,
+        "size": 10,
+      },
+    );
+
+    return List<Map<String, Object?>>.from(response['data'] as List)
+        .whereType<Map<String, Object?>>()
+        .map(ArticleModel.fromJson)
+        .toList();
+  }
 }

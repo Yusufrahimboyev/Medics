@@ -37,6 +37,12 @@ class DoctorModel {
       imageUrl: json['imageUrl'] as String?,
     );
   }
+
+  @override
+  String toString() {
+    return 'DoctorModel(id: $id, about: $about, firstName: $firstName, lastName: $lastName, speciality: $speciality, '
+        'price: $price, rating: $rating, latitude: $latitude, longitude: $longitude, imageUrl: $imageUrl)';
+  }
 }
 
 class ArticleModel {
@@ -72,21 +78,12 @@ class ArticleModel {
     );
   }
 
-  Map<String, Object?> toJson() {
-    return {
-      'id': id,
-      'title': title,
-      'content': content,
-      'authorId': authorId,
-      'views': views,
-      'imageUrl': imageUrl,
-      'createdAt': createdAt?.toIso8601String(),
-    };
+  @override
+  String toString() {
+    return 'ArticleModel(id: $id, title: $title, content: $content, authorId: $authorId, views: $views, '
+        'imageUrl: $imageUrl, createdAt: $createdAt)';
   }
 }
-
-
-
 
 class UserResponse {
   final bool success;
@@ -129,11 +126,11 @@ class UserResponse {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is UserResponse &&
-              runtimeType == other.runtimeType &&
-              success == other.success &&
-              message == other.message &&
-              data == other.data;
+      other is UserResponse &&
+          runtimeType == other.runtimeType &&
+          success == other.success &&
+          message == other.message &&
+          data == other.data;
 
   @override
   int get hashCode => Object.hash(success, message, data);
@@ -237,34 +234,34 @@ class UserData {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is UserData &&
-              runtimeType == other.runtimeType &&
-              id == other.id &&
-              fistName == other.fistName &&
-              lastName == other.lastName &&
-              username == other.username &&
-              email == other.email &&
-              age == other.age &&
-              gender == other.gender &&
-              role == other.role &&
-              enable == other.enable &&
-              accountNonBlocked == other.accountNonBlocked &&
-              imageUrl == other.imageUrl;
+      other is UserData &&
+          runtimeType == other.runtimeType &&
+          id == other.id &&
+          fistName == other.fistName &&
+          lastName == other.lastName &&
+          username == other.username &&
+          email == other.email &&
+          age == other.age &&
+          gender == other.gender &&
+          role == other.role &&
+          enable == other.enable &&
+          accountNonBlocked == other.accountNonBlocked &&
+          imageUrl == other.imageUrl;
 
   @override
   int get hashCode => Object.hash(
-    id,
-    fistName,
-    lastName,
-    username,
-    email,
-    age,
-    gender,
-    role,
-    enable,
-    accountNonBlocked,
-    imageUrl,
-  );
+        id,
+        fistName,
+        lastName,
+        username,
+        email,
+        age,
+        gender,
+        role,
+        enable,
+        accountNonBlocked,
+        imageUrl,
+      );
 
   @override
   String toString() {
@@ -297,7 +294,8 @@ class Role {
   // fromJson method
   factory Role.fromJson(Map<String, Object?> json) {
     var list = json['authorities'] as List<Object?>;
-    List<Authority> authoritiesList = list.map((i) => Authority.fromJson(i as Map<String, Object?>)).toList();
+    List<Authority> authoritiesList =
+        list.map((i) => Authority.fromJson(i as Map<String, Object?>)).toList();
     return Role(
       id: json['id'] as int,
       name: json['name'] as String,
@@ -317,11 +315,11 @@ class Role {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is Role &&
-              runtimeType == other.runtimeType &&
-              id == other.id &&
-              name == other.name &&
-              authorities == other.authorities;
+      other is Role &&
+          runtimeType == other.runtimeType &&
+          id == other.id &&
+          name == other.name &&
+          authorities == other.authorities;
 
   @override
   int get hashCode => Object.hash(id, name, authorities);
@@ -368,10 +366,10 @@ class Authority {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is Authority &&
-              runtimeType == other.runtimeType &&
-              id == other.id &&
-              authorities == other.authorities;
+      other is Authority &&
+          runtimeType == other.runtimeType &&
+          id == other.id &&
+          authorities == other.authorities;
 
   @override
   int get hashCode => Object.hash(id, authorities);
