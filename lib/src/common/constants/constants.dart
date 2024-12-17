@@ -22,4 +22,14 @@ class Urls {
   static const String authPassword = "/auth/password";
   static const String resetEmailPassword = "/auth/password/resend-code";
 
+  static const String getDoctors = "/user/doctors/top";
+  static const String getDoctorById = "/user/{id}/doctor";
+  static const String freeDoctorTime = "/user/{id}/doctor/free-time";
+  static const String getUserAppointment = "/user/{id}/appointment";
+  static const String putUserAppointment = "/user/{id}/appointment";
+  static const String postUserPayment = "/user/payment";
+  static const String getUserPayment = "/user/payment";
+  
+
+
 }

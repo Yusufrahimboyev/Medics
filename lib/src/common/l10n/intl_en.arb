@@ -152,6 +152,14 @@
   "language": "Language",
   "email_entered_wrong": "Email entered wrong",
   "phone": "Phone Number",
-  "email": "Email"
+  "email": "Email",
+  "add_card": "Add Card",
+  "card_number": "Card Number",
+  "cvv": "CVV",
+  "expire_date": "Expire Date",
+  "card": "Card",
+  "add": "Add",
+  "mmyy": "MM/YY"
+
 
 }

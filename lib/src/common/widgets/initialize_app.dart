@@ -7,6 +7,8 @@ import 'package:medics/src/common/service/api_service.dart';
 import 'package:medics/src/features/auth/data/auth_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../features/home/main/data/main_repository.dart';
+
 class InitializeApp {
   Future<AppDependency> initialize() async {
     WidgetsFlutterBinding.ensureInitialized();
@@ -26,12 +28,14 @@ class InitializeApp {
     final ApiService apiService = ApiService(dio: dio);
 
     final authRepository = AuthRepositoryImpl(apiService: apiService);
+    final mainRepository = MainRepositoryImpl(apiService: apiService);
 
     return AppDependency(
       shp: shp,
       locale: locale,
       theme: theme,
       authRepository: authRepository,
+      mainRepository: mainRepository,
     );
   }
 }

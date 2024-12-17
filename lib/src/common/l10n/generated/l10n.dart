@@ -1571,6 +1571,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Add Card`
+  String get add_card {
+    return Intl.message(
+      'Add Card',
+      name: 'add_card',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Card Number`
+  String get card_number {
+    return Intl.message(
+      'Card Number',
+      name: 'card_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `CVV`
+  String get cvv {
+    return Intl.message(
+      'CVV',
+      name: 'cvv',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expire Date`
+  String get expire_date {
+    return Intl.message(
+      'Expire Date',
+      name: 'expire_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Card`
+  String get card {
+    return Intl.message(
+      'Card',
+      name: 'card',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add`
+  String get add {
+    return Intl.message(
+      'Add',
+      name: 'add',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `MM/YY`
+  String get mmyy {
+    return Intl.message(
+      'MM/YY',
+      name: 'mmyy',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

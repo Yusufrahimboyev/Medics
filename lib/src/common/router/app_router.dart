@@ -5,13 +5,14 @@ import 'package:medics/src/features/doctor_consultation/booking_screen/screen/bo
 import 'package:medics/src/features/doctor_consultation/doctor_detail_screen/screen/doctor_detail_screen.dart';
 import 'package:medics/src/features/doctor_consultation/find_doctor_screen/screen/find_doctor_screen.dart';
 import 'package:medics/src/features/doctor_consultation/schedule_screen/screen/schedule_screen.dart';
-import 'package:medics/src/features/home/home_screen/screen/main_screen.dart';
+import 'package:medics/src/features/home/main/screen/main_screen.dart';
 import 'package:medics/src/features/home/top_doctor_screen/screen/top_doctor_screen.dart';
 import 'package:medics/src/features/online_pharmacy/articles/screen/articles_screen.dart';
 import 'package:medics/src/features/online_pharmacy/drugs_detail/screen/drugs_detail_screen.dart';
-import 'package:medics/src/features/online_pharmacy/location/screen/ambulance_screen.dart';
+
 import 'package:medics/src/features/online_pharmacy/my_cart/screen/my_cart_screen.dart';
 import 'package:medics/src/features/online_pharmacy/pharmacy/screen/pharmacy_screen.dart';
+import 'package:medics/src/features/payment_method/add_card/add_card_screen.dart';
 
 import 'package:medics/src/features/payment_method/screen/payment_screen.dart';
 import 'package:medics/src/features/payment_method/top_up/top_up_screen.dart';
@@ -78,6 +79,7 @@ class AppRouter {
   static const String mySaved = "/mySaved";
   static const String faqs = "/faqs";
   static const String appointment = "/appointment";
+  static const String addCard = "/addCard";
 
   //Abdumannon
   static const String profile = "/profile";
@@ -158,26 +160,6 @@ GoRouter router = GoRouter(
         child: BlocProvider(
             create: (BuildContext context) => PaymentBloc(),
             child: const PaymentScreen()),
-        transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(1.0, 1.0);
-          const end = Offset.zero;
-          final tween = Tween(begin: begin, end: end);
-          final offsetAnimation = animation.drive(tween);
-          return SlideTransition(
-            position: offsetAnimation,
-            child: FadeTransition(
-              opacity: animation,
-              child: child,
-            ),
-          );
-        },
-      ),
-    ),
-    GoRoute(
-      path: AppRouter.ambulance,
-      name: AppRouter.ambulance,
-      pageBuilder: (context, state) => CustomTransitionPage(
-        child: const AmbulanceScreen(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           const begin = Offset(1.0, 1.0);
           const end = Offset.zero;
@@ -693,6 +675,26 @@ GoRouter router = GoRouter(
       name: AppRouter.appointment,
       pageBuilder: (context, state) => CustomTransitionPage(
         child: const AppointmentHistoryScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1.0, 1.0);
+          const end = Offset.zero;
+          final tween = Tween(begin: begin, end: end);
+          final offsetAnimation = animation.drive(tween);
+          return SlideTransition(
+            position: offsetAnimation,
+            child: FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+          );
+        },
+      ),
+    ),
+    GoRoute(
+      path: AppRouter.addCard,
+      name: AppRouter.addCard,
+      pageBuilder: (context, state) => CustomTransitionPage(
+        child: const AddCardScreen(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           const begin = Offset(1.0, 1.0);
           const end = Offset.zero;

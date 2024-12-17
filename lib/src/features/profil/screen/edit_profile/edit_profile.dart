@@ -59,7 +59,7 @@ class _EditProfileState extends State<EditProfile> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Form(
-          key: _formKey, // Add the Form widget with the key
+          key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -76,7 +76,7 @@ class _EditProfileState extends State<EditProfile> {
                       child: InkWell(
                         overlayColor: WidgetStateColor.transparent,
                         onTap: () {
-                          // Handle image selection
+
                         },
                         child: CircleAvatar(
                           radius: 12,
@@ -154,6 +154,7 @@ class _EditProfileState extends State<EditProfile> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12),
                   child: TextFormField(
+
                     keyboardType: TextInputType.number,
                     textInputAction: TextInputAction.none,
                     inputFormatters: [
