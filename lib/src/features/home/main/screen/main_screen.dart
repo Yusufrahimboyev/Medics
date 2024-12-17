@@ -7,8 +7,8 @@ import 'package:medics/src/common/utils/context_extension.dart';
 import 'package:medics/src/common/widgets/my_stack.dart';
 import 'package:medics/src/features/home/home_screen/widgets/article_list.dart';
 import '../../../../common/style/app_icons.dart';
-import '../widgets/home_main_card.dart';
-import '../widgets/top_doctor_list.dart';
+import '../../home_screen/widgets/home_main_card.dart';
+import '../../home_screen/widgets/top_doctor_list.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -18,6 +18,10 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  void onTap() {
+    context.dependencies.mainRepository.getDoctorById(4);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +47,11 @@ class _MainScreenState extends State<MainScreen> {
                         ),
                         const Spacer(),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            onTap();
+                            print("object");
+
+                          },
                           overlayColor: WidgetStateColor.transparent,
                           child: SvgPicture.asset(
                             AppIcons.notification,

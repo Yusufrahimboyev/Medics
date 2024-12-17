@@ -5,7 +5,7 @@ import 'package:medics/src/features/doctor_consultation/booking_screen/screen/bo
 import 'package:medics/src/features/doctor_consultation/doctor_detail_screen/screen/doctor_detail_screen.dart';
 import 'package:medics/src/features/doctor_consultation/find_doctor_screen/screen/find_doctor_screen.dart';
 import 'package:medics/src/features/doctor_consultation/schedule_screen/screen/schedule_screen.dart';
-import 'package:medics/src/features/home/home_screen/screen/main_screen.dart';
+import 'package:medics/src/features/home/main/screen/main_screen.dart';
 import 'package:medics/src/features/home/top_doctor_screen/screen/top_doctor_screen.dart';
 import 'package:medics/src/features/online_pharmacy/articles/screen/articles_screen.dart';
 import 'package:medics/src/features/online_pharmacy/drugs_detail/screen/drugs_detail_screen.dart';
