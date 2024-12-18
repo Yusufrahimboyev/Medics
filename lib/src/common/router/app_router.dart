@@ -24,6 +24,7 @@ import 'package:medics/src/features/profil/screen/faqs/faqs_screen.dart';
 import 'package:medics/src/features/profil/screen/my_saved_screen/my_saved_screen.dart';
 import 'package:medics/src/features/profil/screen/profile_screen/profile_screen.dart';
 import '../../features/home/home_screen/screen/home_screen.dart';
+import '../../features/payment_method/add_card/add_card_screen.dart';
 import '../../features/payment_method/bloc/payment_bloc.dart';
 import '../../features/payment_method/second_top_up/bloc/second_top_up_bloc.dart';
 import 'package:medics/src/features/auth/bloc/new_password/new_password_bloc.dart';
@@ -78,6 +79,7 @@ class AppRouter {
   static const String mySaved = "/mySaved";
   static const String faqs = "/faqs";
   static const String appointment = "/appointment";
+  static const String addCart = "/addCart";
 
   //Abdumannon
   static const String profile = "/profile";
@@ -693,6 +695,26 @@ GoRouter router = GoRouter(
       name: AppRouter.appointment,
       pageBuilder: (context, state) => CustomTransitionPage(
         child: const AppointmentHistoryScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1.0, 1.0);
+          const end = Offset.zero;
+          final tween = Tween(begin: begin, end: end);
+          final offsetAnimation = animation.drive(tween);
+          return SlideTransition(
+            position: offsetAnimation,
+            child: FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+          );
+        },
+      ),
+    ),
+    GoRoute(
+      path: AppRouter.addCart,
+      name: AppRouter.addCart,
+      pageBuilder: (context, state) => CustomTransitionPage(
+        child: const AddCardScreen(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           const begin = Offset(1.0, 1.0);
           const end = Offset.zero;

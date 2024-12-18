@@ -21,6 +21,12 @@ class _MainScreenState extends State<MainScreen> {
     final response =
         await context.dependencies.mainRepository.getDoctor(context: context);
     print(response);
+
+  }
+  void onTap2() async {
+    final response2 =
+    await context.dependencies.mainRepository.getArticles(context: context);
+    print(response2);
   }
 
   @override
@@ -50,7 +56,8 @@ class _MainScreenState extends State<MainScreen> {
                           const Spacer(),
                           InkWell(
                             onTap: () {
-                              onTap();
+
+
                               print("object");
                             },
                             overlayColor: WidgetStateColor.transparent,

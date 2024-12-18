@@ -152,6 +152,13 @@
   "language": "Language",
   "email_entered_wrong": "Email entered wrong",
   "phone": "Phone Number",
-  "email": "Email"
+  "email": "Email",
+  "add_card": "Add Card",
+  "add_new_card": "Add New Card",
+  "card_number": "Card Number",
+  "enter_card_number": "Enter Card Number",
+  "card_name": "Card Name",
+  "enter_card_name": "Enter Card Name",
+  "mmyy": "MM/YY"
 
 }

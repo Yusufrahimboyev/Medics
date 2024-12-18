@@ -114,6 +114,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "You_successfully_reset": MessageLookupByLibrary.simpleMessage(
             "You have successfully reset your password."),
         "about": MessageLookupByLibrary.simpleMessage("About"),
+        "add_card": MessageLookupByLibrary.simpleMessage("Add Card"),
+        "add_new_card": MessageLookupByLibrary.simpleMessage("Add New Card"),
         "aditional_discount":
             MessageLookupByLibrary.simpleMessage("Aditional Discount"),
         "admin_fee": MessageLookupByLibrary.simpleMessage("Admin Fee"),
@@ -129,6 +131,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "buy_now": MessageLookupByLibrary.simpleMessage("Buy Now"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "canceled": MessageLookupByLibrary.simpleMessage("Canceled"),
+        "card_name": MessageLookupByLibrary.simpleMessage("Card Name"),
+        "card_number": MessageLookupByLibrary.simpleMessage("Card Number"),
         "change": MessageLookupByLibrary.simpleMessage("Change"),
         "chat_doctor": MessageLookupByLibrary.simpleMessage("Chat Doctor"),
         "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
@@ -157,6 +161,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Email entered wrong"),
         "enter": MessageLookupByLibrary.simpleMessage(
             "Enter the amount you want to top up"),
+        "enter_card_name":
+            MessageLookupByLibrary.simpleMessage("Enter Card Name"),
+        "enter_card_number":
+            MessageLookupByLibrary.simpleMessage("Enter Card Number"),
         "enter_name": MessageLookupByLibrary.simpleMessage("Enter name"),
         "faqs": MessageLookupByLibrary.simpleMessage("FAQs"),
         "find_specialist": MessageLookupByLibrary.simpleMessage(
@@ -170,6 +178,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Login to enjoy the features we’ve provided, and stay healthy!"),
         "logout": MessageLookupByLibrary.simpleMessage("Log  out"),
         "message": MessageLookupByLibrary.simpleMessage("Message"),
+        "mmyy": MessageLookupByLibrary.simpleMessage("MM/YY"),
         "my_cart": MessageLookupByLibrary.simpleMessage("My Cart"),
         "my_saved": MessageLookupByLibrary.simpleMessage("My Saved Articles"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),

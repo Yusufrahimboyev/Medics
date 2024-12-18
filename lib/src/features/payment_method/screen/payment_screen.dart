@@ -182,7 +182,9 @@ class PaymentScreen extends StatelessWidget {
                           ),
                           child: Center(
                             child: IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                context.push(AppRouter.addCart);
+                              },
                               icon: const FaIcon(FontAwesomeIcons.plus),
                             ),
                           ),
